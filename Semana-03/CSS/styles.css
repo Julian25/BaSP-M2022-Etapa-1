@@ -59,6 +59,15 @@ button {
 
 }
 
+h3 {
+    position: absolute;
+    left: 122.3px;
+    width: 868.32px;
+    border-bottom: 3px solid #AACE9B;
+    font-size: 48px;
+
+}
+
 .burguer-menu {
     position: absolute;
     left: 32.93px;
@@ -103,4 +112,35 @@ button {
     left: 572.81px;
     width: 469.19px;
     height: 584.11px;
+}
+
+.do-container {
+    width: 1063px;
+    height: 717px;
+}
+
+.actions-box {
+    display: inline-block;
+    width: 49%;
+    height: 250px;
+    padding-top: 100px;
+}
+
+
+.description-box {
+    float: right;
+    width: 302.64px;
+    height: 236.12px;
+}
+
+.description-box h4 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.description-box p {
+    padding-top: 10px;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 42px;
 }
