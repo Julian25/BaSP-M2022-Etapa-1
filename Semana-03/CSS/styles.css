@@ -68,6 +68,13 @@ h3 {
 
 }
 
+label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+
 .burguer-menu {
     position: absolute;
     left: 32.93px;
@@ -153,7 +160,7 @@ h3 {
 .why-container {
     position: relative;
     width: 1063px;
-    height: 400px;
+    height: 500px;
 }
 .why-container h3 {
     padding-top: 100px;
@@ -171,4 +178,88 @@ h3 {
     font-size: 28px;
     font-weight: 400;
     line-height: 42px;
+}
+
+.contact-container {
+    position: relative;
+    width: 1063px;
+    height: 516px;
+}
+
+.form-box {
+    display: inline-block;
+    width: 358px;
+    height: 61px;
+    
+}
+
+.form-box input {
+    width: 317px;
+    height: 43px;
+}
+
+.business {
+    position: absolute;
+    top: 90px;
+    left: 95px;
+}
+
+.email {
+    position: absolute;
+    top: 90px;
+    left: 492px;
+}
+
+.contact-area {
+    position: absolute;
+    top: 172px;
+    left: 100px;
+    display: inline;
+}
+.contact-area p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.contact-area ul li {
+    padding-top: 20px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+}
+
+
+
+.phone {
+    position: absolute;
+    top: 215px;
+    left: 492px;
+}
+
+.message {
+    position: absolute;
+    top: 328px;
+    left: 95px;
+    display: inline-block;
+    width: 714px;
+    height: 200px;
+}
+
+.message textarea {
+    width: 714px;
+    height: 111px;
+}
+
+.message input {
+    position: absolute;
+    top: 159px;
+    left: 565px;
+    width: 158px;
+    height: 36px;
+    background-color: #AACE9B;
+    border: 1px solid #373867;
+    border-radius: 2px;
+    font-size: 18px;
+    font-weight: 400;
 }
