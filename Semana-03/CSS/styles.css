@@ -1,14 +1,16 @@
 body {
     width: 1440px;
-    font-family: 'Poppins', 'Raleway', sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 header {
     position: relative;
+    left: 376.02px;
     width: 1064px;
     height: 156px;
     
 }
+
 
 
 h1 {
@@ -18,10 +20,43 @@ h1 {
     bottom: 43.96px;
     width: 868.32px;
     height: 36.96px;
-    font-family: 'Raleway';
+    border-bottom: 3px solid #AACE9B;
+    font-family: Raleway, sans-serif;
     font-size: 30px;
     font-weight: 400;
     line-height: 35px;
+}
+
+main {
+    position: absolute;
+    left: 376.02px;
+}
+
+h2 {
+    position: absolute;
+    left: 14.57px;
+    top: 10px;
+    bottom: 383.44px;
+    width: 495.78px;
+    height: 317.56px;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 96px;
+}
+
+button {
+    position: absolute;
+    top: 627.84px;
+    left: 10px;
+    width: 144.37px;
+    height: 50.55px;
+    background-color: #FFFFFF;
+    border: 2px solid #AACE9B;
+    border-radius: 4px;
+    color: #AACE9B;
+    font-size: 13px;
+    font-weight: 400;
+
 }
 
 .burguer-menu {
@@ -31,4 +66,41 @@ h1 {
     bottom: 11.14px;
     width: 35.75px;
     height: 33.92px;
+}
+
+.welcome-container {
+    position: relative;
+    width: 1063px;
+    height: 711px;
+}
+
+.free-website {
+    position: absolute;
+    top: 288.83px;
+    left:24.66px;
+    bottom: 308.44px;
+    width: 426.33px;
+    height: 113.73px;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.website-introduction {
+    position: absolute;
+    top: 448.9px;
+    left: 15.64px;
+    bottom: 48.68px;
+    width: 557.17px;
+    height: 213.42px;
+    font-size: 24px;
+    color: #b3b3b3;
+}
+
+.clock {
+    position: absolute;
+    top: 20.65px;
+    left: 572.81px;
+    width: 469.19px;
+    height: 584.11px;
 }
