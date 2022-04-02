@@ -126,6 +126,11 @@ h3 {
     padding-top: 100px;
 }
 
+.action-box img {
+    width: 207.98px;
+    height: 236.61px;
+}
+
 
 .description-box {
     float: right;
@@ -140,6 +145,29 @@ h3 {
 
 .description-box p {
     padding-top: 10px;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 42px;
+}
+
+.why-container {
+    position: relative;
+    width: 1063px;
+    height: 400px;
+}
+.why-container h3 {
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+.why-container ul {
+    position: absolute;
+    top: 150px;
+    left: 122.3px;
+}
+
+.why-container ul li {
+    padding-top: 30px;
     font-size: 28px;
     font-weight: 400;
     line-height: 42px;
