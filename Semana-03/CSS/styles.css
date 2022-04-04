@@ -4,10 +4,12 @@ body {
 }
 
 header {
-    position: relative;
+    position: fixed;
+    top: 0;
     left: 376.02px;
     width: 1064px;
     height: 156px;
+    background-color: #FFFFFF;
     
 }
 
@@ -50,13 +52,6 @@ button {
     left: 10px;
     width: 144.37px;
     height: 50.55px;
-    background-color: #FFFFFF;
-    border: 2px solid #AACE9B;
-    border-radius: 4px;
-    color: #AACE9B;
-    font-size: 13px;
-    font-weight: 400;
-
 }
 
 h3 {
@@ -65,13 +60,33 @@ h3 {
     width: 868.32px;
     border-bottom: 3px solid #AACE9B;
     font-size: 48px;
-
+    font-weight: 400;
+    line-height: 72px;
 }
 
 label {
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
+}
+
+h4 {
+    width: 268px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid #AACE9B;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+ol li {
+    margin-left: 60px;
+    padding-top: 30px;
+    font-size: 18px;
+    font-weight: 400px;
+    line-height: 27px;
+    list-style: decimal;
+    
 }
 
 
@@ -86,11 +101,12 @@ label {
 
 .welcome-container {
     position: relative;
+    top: 157px;
     width: 1063px;
     height: 711px;
 }
 
-.free-website {
+.welcome-container p:nth-of-type(1) {
     position: absolute;
     top: 288.83px;
     left:24.66px;
@@ -100,9 +116,10 @@ label {
     font-size: 28px;
     font-style: italic;
     font-weight: 400;
+    line-height: 42px;
 }
 
-.website-introduction {
+.welcome-container p:nth-of-type(2) {
     position: absolute;
     top: 448.9px;
     left: 15.64px;
@@ -110,6 +127,7 @@ label {
     width: 557.17px;
     height: 213.42px;
     font-size: 24px;
+    line-height: 36px;
     color: #b3b3b3;
 }
 
@@ -121,6 +139,13 @@ label {
     height: 584.11px;
 }
 
+.btn {
+    background-color: #AACE9B;
+    border: 1px solid #373867;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 400;
+}
 .do-container {
     width: 1063px;
     height: 717px;
@@ -257,18 +282,15 @@ label {
     left: 565px;
     width: 158px;
     height: 36px;
-    background-color: #AACE9B;
-    border: 1px solid #373867;
-    border-radius: 2px;
-    font-size: 18px;
-    font-weight: 400;
 }
 
 .history-container {
     position: relative;
     width: 895px;
     height: 604px;
-    background-image: url(/images/ellipse.png);
+    background-color: #D9E0D6;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
 }
 
 .history-container h3 {
@@ -285,7 +307,7 @@ label {
     color: #756464;
 }
 
-#history-p {
+.history-container p:nth-of-type(1){
     position: absolute;
     top: 268px;
     left: 146px;
@@ -296,7 +318,7 @@ label {
     line-height: 15px;
 }
 
-#data-security {
+.history-container img:nth-of-type(1){
     position: absolute;
     top: 423px;
     left: 256px;
@@ -304,7 +326,7 @@ label {
     height: 78px;
 }
 
-#effective-time {
+.history-container img:nth-of-type(2){
     position: absolute;
     top: 423px;
     left: 362px;
@@ -312,13 +334,35 @@ label {
     height: 78px;
 }
 
-#objetive {
+.history-container img:nth-of-type(3) {
     position: absolute;
     top: 167px;
     left: 448px;
 }
 
-#objective-p {
+.vertical-line-1 {
+    position: absolute;
+    top:  33px;
+    left: 457px;
+    width: 0px;
+    height: 134px;
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+.vertical-line-2 {
+    position: absolute;
+    top:  380px;
+    left: 458px;
+    width: 0px;
+    height: 207px;
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+
+
+.history-container p:nth-of-type(2) {
     position: absolute;
     top: 431px;
     left: 486px;
@@ -328,3 +372,80 @@ label {
     font-weight: 400;
     line-height: 15px;
 }
+
+.products-container {
+    width: 1043px;
+    height: 698px;
+}
+
+.ol-box {
+    display: inline-block;
+    width: 343px;
+    height: 698px;
+}
+
+.leftbar-container {
+    position: relative;
+    top: 0;
+    width: 376px;
+    height: 1024px;
+}
+
+input[type=search] {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 257px;
+    height: 38px;
+    background-image: url(/images/magnifying-glass.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    border: 1px solid #373867;
+    border-radius: 5px;
+}
+
+.footer-container{
+    position: relative;
+    top: 3571px;
+    left :376.02px;
+    border-top: 3px solid #AACE9B;
+    width: 1063px;
+    height: 99.2px;
+}
+
+.social-box {
+    position: absolute;
+    top: 60px;
+    left: 383px;
+    width: 250px;
+    height: 24.32px;
+}
+
+.social-box img {
+    margin-right: 25px;
+    width: 25.7px;
+    height: 24.32px;
+}
+
+.footer-container p:nth-of-type(1) {
+    position: absolute;
+    top: 30px;
+    left: 411px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+
+.footer-container p:nth-of-type(2) {
+    position: absolute;
+    top: 90px;
+    left: 331px;
+    font-family: Roboto,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+} 
+
+
