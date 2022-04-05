@@ -158,9 +158,9 @@ nav ul li a {
 .clock {
     position: absolute;
     top: 20.65px;
-    left: 572.81px;
+    left: 573px;
     width: 469.19px;
-    height: 584.11px;
+    height: 584px;
 }
 
 .btn {
@@ -425,7 +425,7 @@ nav ul li a {
     position: fixed;
     top: 0;
     width: 376px;
-    height: 710px;
+    height: 100vh;
     background-color: #FFFFFF;
     border: 1px solid #000000;
 }
@@ -517,9 +517,11 @@ nav ul li a {
 /*Footer styles*/
 
 .footer-container{
-    position: relative;
-    top: 3571px;
-    left :376.02px;
+    position: fixed;
+    bottom: 0;
+    left: 378px;
+    z-index: 6;
+    background-color: #FFFFFF;
     border-top: 3px solid #AACE9B;
     width: 1063px;
     height: 99.2px;
