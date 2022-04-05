@@ -531,7 +531,7 @@ nav ul li a {
 
 .social-box {
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 383px;
     width: 250px;
     height: 24.32px;
@@ -545,7 +545,7 @@ nav ul li a {
 
 .footer-container p:nth-of-type(1) {
     position: absolute;
-    top: 30px;
+    top: 25px;
     left: 411px;
     font-family: Roboto, sans-serif;
     font-size: 16px;
@@ -556,7 +556,7 @@ nav ul li a {
 
 .footer-container p:nth-of-type(2) {
     position: absolute;
-    top: 90px;
+    top: 80px;
     left: 331px;
     font-family: Roboto,sans-serif;
     font-size: 12px;
