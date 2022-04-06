@@ -115,11 +115,11 @@ nav ul li a {
 }
 .burguer-menu {
     position: absolute;
-    left: 32.93px;
-    top: 39.96px;
-    bottom: 11.14px;
-    width: 35.75px;
-    height: 33.92px;
+    left: 33px;
+    top: 40px;
+    bottom: 11px;
+    width: 36px;
+    height: 34px;
 }
 
 /* 'Welcome section styles*/
@@ -132,24 +132,23 @@ nav ul li a {
 
 .welcome-container p:nth-of-type(1) {
     position: absolute;
-    top: 288.83px;
-    left:24.66px;
-    bottom: 308.44px;
-    width: 426.33px;
-    height: 113.73px;
+    top: 289px;
+    left:25px;
+    bottom: 308px;
+    width: 426px;
+    height: 114px;
     font-size: 28px;
     font-style: italic;
     font-weight: 400;
-    line-height: 42px;
 }
 
 .welcome-container p:nth-of-type(2) {
     position: absolute;
-    top: 448.9px;
-    left: 15.64px;
-    bottom: 48.68px;
-    width: 557.17px;
-    height: 213.42px;
+    top: 449px;
+    left: 16px;
+    bottom: 49px;
+    width: 557px;
+    height: 213px;
     font-size: 24px;
     line-height: 36px;
     color: #b3b3b3;
@@ -157,9 +156,9 @@ nav ul li a {
 
 .clock {
     position: absolute;
-    top: 20.65px;
+    top: 21px;
     left: 573px;
-    width: 469.19px;
+    width: 469px;
     height: 584px;
 }
 
@@ -227,7 +226,7 @@ nav ul li a {
 .why-container ul {
     position: absolute;
     top: 150px;
-    left: 122.3px;
+    left: 122px;
 }
 
 .why-container ul li {
@@ -338,7 +337,6 @@ nav ul li a {
     border: none;
     font-size: 30px;
     font-weight: 500;
-    line-height: 45px;
     text-align:  right;
     color: #756464;
 }
@@ -351,7 +349,6 @@ nav ul li a {
     height: 60px;
     font-size: 10px;
     font-weight: 400;
-    line-height: 15px;
 }
 
 .history-container img:nth-of-type(1){
@@ -526,7 +523,7 @@ nav ul li a {
     background-color: #FFFFFF;
     border-top: 3px solid #AACE9B;
     width: 1063px;
-    height: 99.2px;
+    height: 99px;
 }
 
 .social-box {
@@ -534,13 +531,13 @@ nav ul li a {
     top: 50px;
     left: 383px;
     width: 250px;
-    height: 24.32px;
+    height: 24px;
 }
 
 .social-box img {
     margin-right: 25px;
-    width: 25.7px;
-    height: 24.32px;
+    width: 26px;
+    height: 24px;
 }
 
 .footer-container p:nth-of-type(1) {
