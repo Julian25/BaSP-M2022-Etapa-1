@@ -8,8 +8,9 @@
 }
 
 .header-container button {
-    margin-left: 20px;
-    padding: 0;
+    margin-top: 10px;
+    margin-left: 40px;
+    padding: 20px;
     border: none;
     background-color: #ffffff;
 }
