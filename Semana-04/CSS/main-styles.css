@@ -66,10 +66,10 @@
     text-align: center;
 }
 
-/* 'What can you do?' section styles*/
+/* 'Why use Trackgenix' section styles*/
 
 .why ul li {
-    margin-left: 20px;
+    margin-left: 30px;
     padding-top: 30px;
     font-size: 28px;
     font-weight: 400;
@@ -86,12 +86,13 @@
 }
 
 .contact-area p {
+    margin-left: 20px;
     font-size: 14px;
     font-weight: 700;
 }
 
 .contact-area ul li {
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .contact-area ul li label {
@@ -103,7 +104,7 @@
 .message {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .message input {
@@ -112,6 +113,10 @@
 }
 
 /* 'Trackgenix history' section styles */
+
+.history h3 {
+    margin-right: 60px;
+}
 
 .history p {
     margin: auto;
@@ -131,13 +136,13 @@
 
 /* Products section styles*/
 
-.column-container h4 {
+.container-column h4 {
     padding-bottom: 0;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
-.column-container ol li {
+.container-column ol li {
     margin-top: 10px;
     font-family: Roboto, sans-serif;
     font-size: 20px;
