@@ -26,3 +26,10 @@ header {
     width: 48px;
     height: 44px;
 }
+
+@media screen and (min-width: 600px) {
+    .header-container {
+        justify-content: flex-end;
+        width: 75%;
+    }
+}
