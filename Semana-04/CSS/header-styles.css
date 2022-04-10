@@ -2,15 +2,18 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    min-height: 72px;
+    width: 100%;
+    min-height: auto;
     background-color: #ffffff;
     border-bottom: 5px solid #AACE9B;
 }
 
 .header-container button {
+    width: 48px;
+    height: 44px;
     margin-top: 10px;
-    margin-left: 40px;
-    padding: 20px;
+    margin-left: 20px;
+    padding: 0;
     border: none;
     background-color: #ffffff;
 }
