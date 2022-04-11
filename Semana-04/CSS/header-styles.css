@@ -1,6 +1,8 @@
 header {
     position: sticky;
+    z-index: 6;
     top: 0;
+    background-color: #ffffff;
 }
 .header-container {
     display: flex;
@@ -8,8 +10,15 @@ header {
     align-items: center;
     width: 100%;
     min-height: auto;
+    
     background-color: #ffffff;
     border-bottom: 5px solid #AACE9B;
+}
+
+h1 {
+    padding: 10px;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 .header-container button {
@@ -27,9 +36,20 @@ header {
     height: 44px;
 }
 
-@media screen and (min-width: 600px) {
-    .header-container {
-        justify-content: flex-end;
+@media screen and (min-width: 768px) {
+    header {
         width: 75%;
+        margin-left: 25%;
     }
+
+    .header-container {
+        align-items: flex-end;
+        height: 156px;
+    }
+    
+    h1, .header-container button {
+        margin-bottom: 20px;
+    }
+
 }
+    
