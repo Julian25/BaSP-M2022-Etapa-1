@@ -1,6 +1,6 @@
 footer {
     width: 100%;
-    min-height: 144px;
+    height: 144px;
     border-top: 5px solid #AACE9B;
 }
 .social-box {
@@ -31,3 +31,20 @@ footer p {
     font-size: 16px;
 }
 
+@media screen and (min-width: 768px) {
+    footer {
+        width: 70%;
+        margin-left: 30%;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 75%;
+        margin-left: 26%;
+        background-color: #ffffff;
+    }
+}

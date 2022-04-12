@@ -68,16 +68,26 @@ h2 {
 
 /* 'What can you do?' section styles*/
 
-.actions-box img {
-    align-self: center;
-    width: 50%;
-    margin: auto;
+.box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 250px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 
+.box-wrapper img {
+    max-width: 207px;
+    width: 100%;
+}
+.description {
+    max-width: 236px;
+}
 
 .description h4 {
-    width: 70% ;
+    width: 100% ;
     margin-top: 20px;
     padding: 0;
     border: none;
@@ -96,7 +106,7 @@ h2 {
 /* 'Why use Trackgenix' section styles*/
 
 .why ul li {
-    margin-left: 30px;
+    margin-left: 40px;
     padding-top: 30px;
     font-size: 28px;
     font-weight: 400;
@@ -105,11 +115,28 @@ h2 {
 }
 
 /* Contact form styles */
+form {
+    width: 100%;
+}
+.form-box {
+    display: inline-block;
+    max-width: 317px;
+    width: 100%;
+    margin-left: 60px;
+    margin-top: 20px;
+}
 
-.box-wrapper input {
-    width: 80%;
+.form-box > input {
+    width: 100%;
     height: 43px;
-    margin-bottom: 20px;
+}
+
+.contact-area {
+    display: inline;
+    max-width: 250px;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 
 .contact-area p {
@@ -118,20 +145,26 @@ h2 {
     font-weight: 700;
 }
 
-.contact-area ul li {
+.form-box ul li {
     margin: 20px;
 }
 
-.contact-area ul li label {
+.form-box ul li label {
     font-family: Roboto, sans-serif;
     font-size: 12px;
     font-weight: 300;
 }
 
 .message {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+    display: inline-block;
+    max-width: 714px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.message textarea {
+    width: 90%;
+    height: 111px;
 }
 
 .message input {
@@ -141,35 +174,37 @@ h2 {
 
 /* 'Trackgenix history' section styles */
 
-.history h3 {
-    margin-right: 60px;
-}
-
-.history p {
+.objective p {
     margin: auto;
     margin-top: 20px;
     width: 80%;
 }
 
-.history img {
-    display: none ;
+.container h4 {
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-left: 50px;
+    
 }
-.history p span {
-    display: block;
-    margin-left: 0;
-    margin-right: 150px;
-    margin-bottom: 10px;
-}
+
 
 /* Products section styles*/
 
-.container-column h4 {
+.product-box {
+    max-width: 250px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.product-box h4 {
+    width: 100%;
     padding-bottom: 0;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
-.container-column ol li {
+.product-box ol li {
     margin-top: 10px;
     font-family: Roboto, sans-serif;
     font-size: 20px;
@@ -177,7 +212,9 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
-
+    
+    /* 'Welcome section styles*/
+    
     h2 {
     align-self: flex-start;
     width: 100%;
@@ -186,9 +223,7 @@ h2 {
     margin-bottom: 0px;
     font-size: 64px;
     } 
-
-
-
+    
     .clock {
         width: 100%;
     }
@@ -197,5 +232,19 @@ h2 {
         width: 100%;
         text-align: left;
     }
+    
+
+
 }
 
+@media screen and (min-width: 1440px) {
+    .box-wrapper {
+        justify-content: flex-start;
+        max-width: 500px;
+    }
+
+    /* Contact form styles */
+    .message textarea {
+        width: 714px;
+    }
+}
