@@ -1,25 +1,27 @@
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 7;
     background-color: #ffffff;
 }
+
+
 .header-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    min-height: auto;
-    
     background-color: #ffffff;
     border-bottom: 5px solid #AACE9B;
 }
+
 
 h1 {
     padding: 10px;
     font-size: 40px;
     font-weight: 700;
 }
+
 
 .header-container button {
     width: 48px;
@@ -31,27 +33,32 @@ h1 {
     background-color: #ffffff;
 }
 
+
 .header-container button img {
     width: 48px;
     height: 44px;
 }
 
+
 @media screen and (min-width: 768px) {
+    
+    
     header {
         width: 70%;
         margin-left: 31%;
     }
-
+    
     
     h1, .header-container button {
         margin-bottom: 20px;
     }
-
 }
 @media screen and (min-width: 1440px) {
+    
+    
     header {
         width: 75%;
-        margin-left: 26%;
+        margin-left: 25%;
     }
 }
     
