@@ -29,4 +29,4 @@ Using Flexbox, a version was generated that is completely responsive and can be 
 
 3- Click  [Week  03](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-03) to see to this project at the end of this week.
 
-3- Click  [Week  04](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-03) to see to this project at the end of this week.
+3- Click  [Week  04](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-04) to see to this project at the end of this week.
