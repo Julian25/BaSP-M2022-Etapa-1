@@ -32,8 +32,8 @@ console.log(emptySpace);
 //Exercise 2.f 
 
 var book = "harry potter";
-var harryPotter = book.substring(0,1).toUpperCase() + book.substring(1,4).toLowerCase()
-+ " " + book.substring(6,7).toUpperCase() + book.substring(7).toLowerCase();
+var harryPotter = book.substring(0,1).toUpperCase() + book.substring(1,5).toLowerCase()
+                + " " + book.substring(6,7).toUpperCase() + book.substring(7).toLowerCase();
 console.log(harryPotter);
 
 
