@@ -1,5 +1,4 @@
 /*Exercise 4: If Else*/
-console.log('Exercise 4: If Else');
 
 //Exercise 4.a
 console.log('Exercise 4.a');
@@ -15,7 +14,7 @@ if(num >= 0.5) {
 //Exercise 4.b
 console.log('Exercise 4.b');
 
-var age = Math.floor(Math.random() *100);
+var age = Math.floor(Math.random() *101);
 
 if (age < 2){
     alert('Baby');
