@@ -1,7 +1,6 @@
 /*Exercise 4: If Else*/
 
 //Exercise 4.a
-console.log('Exercise 4.a');
 
 var num = Math.random();
 
@@ -12,7 +11,6 @@ if(num >= 0.5) {
 }
 
 //Exercise 4.b
-console.log('Exercise 4.b');
 
 var age = Math.floor(Math.random() *101);
 
