@@ -71,5 +71,5 @@ function addNumbers6e (num1, num2){
         return validateInteger2(num1,num2);
     }
 }
-var addition4 = addNumbers6e(7.2,1.2);
+var addition4 = addNumbers6e(7.1,1.2);
 console.log(addition4);

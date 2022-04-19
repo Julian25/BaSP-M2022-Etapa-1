@@ -21,7 +21,10 @@ The style sheet of this project has been written with the purpose of giving the 
 
 Using Flexbox, a version was generated that is completely responsive and can be viewed on mobile devices (smart phone and tablet) as well as on a computer.
 
-## How to view this page online
+## Week 05
+During the fifth week, Javascript exercises with the purpose of acquiring basic concepts of this programming language were solved.
+
+# How to view this page online
 
 1- Clicking [this link](https://julian25.github.io/BaSP-M2022-Etapa-1) will lead you to the page of this project on github
 
@@ -29,4 +32,16 @@ Using Flexbox, a version was generated that is completely responsive and can be 
 
 3- Click  [Week  03](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-03) to see to this project at the end of this week.
 
-3- Click  [Week  04](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-04) to see to this project at the end of this week.
+4- Click  [Week  04](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-04) to see to this project at the end of this week.
+
+5- Click  [Week  04](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-05) to see to this project at the end of this week.
+
+# How to view the page offline:
+
+1- Download the project files from the [repository](https://github.com/Julian25/BaSP-M2022-Etapa-1) by clicking the green button labeled "Code" and then "Download ZIP"
+
+2- Extract the files from the ZIP into a folder on your computer.
+
+3- Navigate to the folder of the week you want to check.
+
+4- Open the file index.html and the landing page will open on your default browser.
