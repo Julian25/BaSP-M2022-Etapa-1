@@ -34,7 +34,7 @@ During the fifth week, Javascript exercises with the purpose of acquiring basic 
 
 4- Click  [Week  04](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-04) to see to this project at the end of this week.
 
-5- Click  [Week  04](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-05) to see to this project at the end of this week.
+5- Click  [Week  05](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-05) to see to this project at the end of this week.
 
 # How to view the page offline:
 
