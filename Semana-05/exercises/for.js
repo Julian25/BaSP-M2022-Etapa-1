@@ -32,7 +32,7 @@ var sentence = "";
 for(var i = 0; i < advengers3.length; i++){
     sentence += advengers3[i];
 }
-alert(sentence);
+alert('Exercise 5.c: ' + sentence);
 
 //Exercise 5.d 
 console.log("------------------");
