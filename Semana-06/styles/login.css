@@ -16,6 +16,8 @@ h2 {
 
 form {
     display: flex;
+    max-width: 400px;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     
@@ -28,7 +30,7 @@ form {
     max-width: 260px;
     width: 100%;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 .form-label {
@@ -44,9 +46,89 @@ form {
     border-radius: 4px;
 }
 
+.form-input:focus {
+    border: 3px solid #000000;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.input-message {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #F13312;
+}
+
+.remember-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.remember-box input {
+    width: 10px;
+    height: 10px;
+
+}
+.remember-box label, .remember-container a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #373867;
+}
+
+.remember-container a {
+    text-decoration: none;
+}
+
 .container-form button {
     align-self: center;
     width: 260px;
-    margin-top: 70px;
+    margin-top: 30px;
     margin-bottom: 50px;
+}
+
+
+
+/* Validation styles */
+.input-error {
+    border: 1px solid #F13312;
+}
+
+.label-error {
+    color: #F13312;
+}
+
+.message-error {
+    display: block;
+}
+
+.login-push {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 260px;
+    width: 100%;
+    padding: 20px;
+    background-color: #AACE9B;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.login-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 260px;
+    width: 100%;
+    padding: 20px;
+    background-color: #F13312;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.login-push p, .login-error p {
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 700;
 }
