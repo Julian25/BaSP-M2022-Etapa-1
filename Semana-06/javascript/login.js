@@ -14,7 +14,7 @@ window.onload = function () {
     
     /*Validations*/
     function validateEmail (input) {
-        var regularExpresion = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+        var regularExpresion = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
         if (regularExpresion.test(input)) {
             return true;
         } else {
@@ -24,27 +24,27 @@ window.onload = function () {
     
     function stringContainNumber (input){
         for(var i = 0; i < input.length; i++){
-            if(!isNaN(input.charAt(i)) && input.charAt(i) !== " " &&  input.charAt(i) !== '!'){
+            if(!isNaN(input.charAt(i)) && input.charAt(i) !== " "){
                 return true;
             }
         }
         return false;
     }
+    
     function validatePassword (input) {
         var letters = ["a","b","c","d","e","f","g","h","i","j","k",
         "l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", 
         "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P",
         "Q","R","S","T","U","V","W","X","Y","Z"];
-        
         for(var i= 0; i < input.length; i++){
-            if(letters.indexOf(input.charAt(i),0) !=- 1 && stringContainNumber(input)) {
+            if(letters.indexOf(input.charAt(i)) !=- 1 && stringContainNumber(input)) {
                 return true;
             } else {
                 return false;
             }
         }
     }
-
+    
     function validateForm(e){
         switch(e.target.name) {
             case 'email':
@@ -59,9 +59,9 @@ window.onload = function () {
                 }
             break;
             case 'password':
-                if(validatePassword(e.target.value) == false || e.target.value.length < 8) {
-                    passwordLabel.classList.add('label-error');
-                    password.classList.add('input-error');
+                passwordLabel.classList.add('label-error');
+                password.classList.add('input-error');
+                if(validatePassword(e.target.value) == false || e.target.value.length < 8 || e.target.value.length  > 10) {
                     passwordMessage.classList.add('message-error');
                 }else {
                     passwordLabel.classList.remove('label-error');
@@ -72,7 +72,7 @@ window.onload = function () {
         }
         
     }
-
+    
     function correctError(e) {
         switch(e.target.name) {
             case 'email':
@@ -87,12 +87,12 @@ window.onload = function () {
             break;
         }
     }
-
+    
     logInInputs.forEach(function(input){
         input.addEventListener('blur', validateForm)
         input.addEventListener('focus', correctError)
     });
-
+    
     function logInData() {
         if(validateEmail(email.value) && validatePassword(password.value)) {
             logInResult.className = 'login-push';
@@ -118,8 +118,7 @@ window.onload = function () {
         }
         
     }
-
-
+    
     logInButton.addEventListener('click', function(e){
         e.preventDefault();
         logInData(e);

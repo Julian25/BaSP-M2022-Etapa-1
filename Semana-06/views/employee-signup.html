@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Start of style sheets-->
+        <link rel="stylesheet" href="../styles/reset.css">
+        <link rel="stylesheet" href="../styles/general-styles.css">
+        <link rel="stylesheet" href="../styles/header-styles.css">
+        <link rel="stylesheet" href="../styles/employee-signup.css">
+        <link rel="stylesheet" href="../styles/sidebar-styles.css">
+        <link rel="stylesheet" href="../styles/footer-styles.css">
+        <!--End of style sheets-->
+        <title>Trackgenix</title>
+        <!--start of google typography-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;
+        0,600;1,400&family=Raleway:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+        <!--end of google typography-->
+        <!--JS code-->
+        <script src="../javascript/employee-signup.js"></script>
+        <!--En of JS code-->
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <button class="btn"><img src="../assets/burguer-menu.png" alt=""></button>
+                <h1>Trackgenix S.A</h1>
+            </div>
+        </header>
+        <main>
+            <div class="container-sign">
+                <h2>
+                    Sign Up
+                </h2>
+                <form id="signup-form">
+                    <div class="container-wrapper">
+                        <div class="sign-group">
+                            <label for="name" class="sign-lable" id="name-label">
+                                Name
+                            </label>
+                            <input type="text" class="sign-input" name="name" id="name" 
+                            placeholder="Name">
+                            <p class="sign-message" id="name-message">
+                                Name must only contain  letters and it must be more than 3
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for="surname" class="sign-lable" id="surname-label">
+                                Surname
+                            </label>
+                            <input type="text" class="sign-input" name="surname" id="surname" 
+                            placeholder="lastName">
+                            <p class="sign-message" id="surname-message">
+                                Surname must only contain  letters and it must be more than 3
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for="id-number" class="sign-lable" id="id-label">
+                                ID number
+                            </label>
+                            <input type="text" class="sign-input" name="id-number" id="id-number" 
+                            placeholder="ID number">
+                            <p class="sign-message" id="id-message">
+                                ID  must only contain  numbers and it must be more than 7
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for="birth-date" class="sign-lable" id="birth-label">
+                                Birth date
+                            </label>
+                            <input type="date" class="sign-input" name="birth-date" id="birth-date" 
+                            placeholder="Birth date">
+                            <p class="sign-message" id="birth-message">
+                                The date of birth must be in the format dd/mm/yyyy
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for="phone-number" class="sign-lable" id="phone-label">
+                                Phone
+                            </label>
+                            <input type="number" class="sign-input" name="phone-number" id="phone-number" 
+                            placeholder="Phone">
+                            <p class="sign-message" id="phone-message">
+                                Phone number must contain 10 numbers
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for="adress" class="sign-lable" id="adress-label">
+                                Adress
+                            </label>
+                            <input type="text" class="sign-input" name="adress" id="adress" 
+                            placeholder="Adress">
+                            <p class="sign-message" id="adress-message">
+                                Address must contain at least 5 characters with letters, 
+                                numbers and a space in between.
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for="city" class="sign-lable" id="city-label">
+                                City
+                            </label>
+                            <input type="text" class="sign-input" name="city" id="city" 
+                            placeholder="City">
+                            <p class="sign-message id="city-message">
+                                City must contain alphanumeric text and must be longer than 3 letters.
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for= "zip" class="sign-lable" id="zip-label">
+                                Zip code
+                            </label>
+                            <input type="text" class="sign-input" name="zip" id="zip" 
+                            placeholder="Zip code">
+                            <p class="sign-message" id="zip-message">
+                                Zip code must contain only number and must have between 4 and 5 numbers
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for="email" class="sign-lable" id="email-label">
+                                Email
+                            </label>
+                            <input type="email" class="sign-input" name="email" id="email" 
+                            placeholder="name@trackhenix.com">
+                            <p class="sign-message" id="email-message">
+                                Provide a valid email address
+                            </p>
+                        </div>
+                        <div class="sign-group">
+                            <label for="password" class="sign-lable" id="password-label">
+                                Password
+                            </label>
+                            <input type="password" class="sign-input" name="password" id="password" placeholder="Password">
+                            <p class="sign-message" id="password-message">
+                                The password must be made up of letters and numbers 
+                                and must be between 8 and 10 characters long.
+                            </p>
+                        </div>
+                        <div class="sign-group" id="repeat">
+                            <label for="re-password" class="sign-lable" id="repeat-label">
+                                Reapet Password
+                            </label>
+                            <input type="password" class="sign-input" name="re-password" id="re-password" placeholder="Repeat password">
+                            <p class="sign-message" id="password-message">
+                                The password must be made up of letters and numbers 
+                                and must be between 8 and 10 characters long.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="btn" id="btn">Create</button>
+                </form>
+            </div>
+        </main>
+        <aside> <!--sidebar-->
+            <div class="container">
+                <form>
+                    <input type="search" class="search">
+                </form>
+                <p>Menu</p> 
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./employee-signup.html">Sign Up</a></li>
+                        <li><a href="#">Log In</a></li>
+                    </ul>
+                </nav>
+                <p>Get in touch</p> 
+                <p>
+                    Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus,
+                    ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante
+                    interdum. Sed nulla amet lorem feugiat tempus aliquam.
+                </p>
+                <ul>
+                    <li>
+                        <img src="../assets/mail.png" alt="mail icon">
+                        <a href="#">
+                            information@trackgenix.tld
+                        </a>
+                    </li>
+                    <li>
+                        <img src="../assets/adress.png" alt="adress icon">
+                        <a href="#">
+                            1234 Somewhere Road #8254 Nashville, TN 00000-0000    
+                        </a>
+                    </li>
+                    <li>
+                        <img src="../assets/phone.png" alt="phone icon">
+                        <a href="#">
+                            (000) 000-0000  
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <footer>
+            <div class="container">
+                <p>
+                    Rosario, Argentina
+                </p>
+                <div class="social-box">
+                    <a href="#"> <img src="../assets/linkedin.png" alt="Linkedin icon"></a>
+                    <a href="#"><img src="../assets/instagram.png" alt="Instagram icon"></a>
+                    <a href="#"> <img src="../assets/facebook.png" alt="Facebook icon"></a>
+                    <a href="#"><img src="../assets/twitter.png" alt="Twitter icon"></a>
+                </div>
+                <p>
+                    Copyright © 2022 Radium Rocket. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
