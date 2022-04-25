@@ -6,13 +6,23 @@ window.onload = function () {
     var email = document.getElementById('email');
     var passwordLabel = document.getElementById('password-label');
     var password = document.getElementById('password');
-    var emailMessage = document.getElementById('email-message');
-    var passwordMessage = document.getElementById('password-message');
+    var emailMesagge = document.getElementById('email-mesagge');
+    var passwordMesagge = document.getElementById('password-mesagge');
     var logInButton = document.getElementById('btn');
     var logInTitle = document.querySelector('.container-form h2');
     var logInResult = document.createElement('div');
     
     /*Validations*/
+
+    var letters = ["a","b","c","d","e","f","g","h","i","j","k",
+    "l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", 
+    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P",
+    "Q","R","S","T","U","V","W","X","Y","Z"];
+
+    var numbers = ["0","1","2","3","4","5","6","7","8","9"];
+
+    var symbols = ["!","#","$","%","&","/","(",")","=","?","¡","¿","+","*","[","]","{","}","-",".", "@"];
+    
     function validateEmail (input) {
         var regularExpresion = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
         if (regularExpresion.test(input)) {
@@ -22,27 +32,28 @@ window.onload = function () {
         }
     }
     
-    function stringContainNumber (input){
-        for(var i = 0; i < input.length; i++){
-            if(!isNaN(input.charAt(i)) && input.charAt(i) !== " "){
-                return true;
-            }
-        }
-        return false;
-    }
-    
     function validatePassword (input) {
-        var letters = ["a","b","c","d","e","f","g","h","i","j","k",
-        "l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", 
-        "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P",
-        "Q","R","S","T","U","V","W","X","Y","Z"];
-        for(var i= 0; i < input.length; i++){
-            if(letters.indexOf(input.charAt(i)) !=- 1 && stringContainNumber(input)) {
-                return true;
-            } else {
-                return false;
+        var inputValue = input;
+        var numberOfLetters = 0;
+        var numericChar = 0;
+        var numberOfSymbols = 0;
+        for(var i= 0; i < inputValue.length; i++) {
+            var inputName = inputValue[i]
+            if (letters.indexOf(inputName) != -1) {
+                numberOfLetters++;
+            }else if (numbers.indexOf(inputName) != -1){
+                numericChar++;
+            }else if (symbols.indexOf(inputName) != -1) {
+                numberOfSymbols++;
             }
         }
+        
+        if(numberOfLetters > 4 && numericChar > 2 && numberOfSymbols === 0) {
+            return true
+        } else {
+            return false
+        }
+        
     }
     
     function validateForm(e){
@@ -51,22 +62,22 @@ window.onload = function () {
                 if(!(validateEmail(e.target.value))){
                     emailLabel.classList.add('label-error');
                     email.classList.add('input-error');
-                    emailMessage.classList.add('message-error');
+                    emailMesagge.classList.add('mesagge-error');
                 }else{
                     emailLabel.classList.remove('label-error');
                     email.classList.remove('input-error');
-                    emailMessage.classList.remove('message-error');
+                    emailMesagge.classList.remove('mesagge-error');
                 }
             break;
             case 'password':
+                if(validatePassword(e.target.value) == false || e.target.value.length < 8 || e.target.value.length  > 10) {
                 passwordLabel.classList.add('label-error');
                 password.classList.add('input-error');
-                if(validatePassword(e.target.value) == false || e.target.value.length < 8 || e.target.value.length  > 10) {
-                    passwordMessage.classList.add('message-error');
+                passwordMesagge.classList.add('mesagge-error');
                 }else {
                     passwordLabel.classList.remove('label-error');
                     password.classList.remove('input-error');
-                    passwordMessage.classList.remove('message-error');
+                    passwordMesagge.classList.remove('mesagge-error');
                 }
             break;
         }
@@ -78,12 +89,12 @@ window.onload = function () {
             case 'email':
                 emailLabel.classList.remove('label-error');
                 email.classList.remove('input-error');
-                emailMessage.classList.remove('message-error');
+                emailMesagge.classList.remove('mesagge-error');
             break; 
             case 'password':
                 passwordLabel.classList.remove('label-error');
                 password.classList.remove('input-error');
-                passwordMessage.classList.remove('message-error');
+                passwordMesagge.classList.remove('mesagge-error');
             break;
         }
     }
