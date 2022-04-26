@@ -15,14 +15,15 @@ window.onload = function () {
     /*Validations*/
 
     var letters = ["a","b","c","d","e","f","g","h","i","j","k",
-    "l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", 
-    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P",
-    "Q","R","S","T","U","V","W","X","Y","Z"];
+                    "l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", 
+                    "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P",
+                    "Q","R","S","T","U","V","W","X","Y","Z"];
 
     var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
     var symbols = ["!","#","$","%","&","/","(",")","=","?","¡","¿","+","*","[","]","{","}","-",".", "@"];
     
+    //Function to validate Email
     function validateEmail (input) {
         var regularExpresion = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
         if (regularExpresion.test(input)) {
@@ -32,6 +33,7 @@ window.onload = function () {
         }
     }
     
+    //Function to validate password
     function validatePassword (input) {
         var inputValue = input;
         var numberOfLetters = 0;
@@ -56,6 +58,7 @@ window.onload = function () {
         
     }
     
+    // Fuction to validate each input on blur event
     function validateForm(e){
         switch(e.target.name) {
             case 'email':
@@ -81,9 +84,9 @@ window.onload = function () {
                 }
             break;
         }
-        
     }
     
+    //Function for correcting state of wrong field in focus event
     function correctError(e) {
         switch(e.target.name) {
             case 'email':
@@ -99,11 +102,13 @@ window.onload = function () {
         }
     }
     
+    //Adding events blur and focus to every input in the form
     logInInputs.forEach(function(input){
         input.addEventListener('blur', validateForm)
         input.addEventListener('focus', correctError)
     });
     
+    //Function to get data from inputs when click on create button
     function logInData() {
         if(validateEmail(email.value) && validatePassword(password.value)) {
             logInResult.className = 'login-push';
@@ -135,6 +140,4 @@ window.onload = function () {
         logInData(e);
         
     },)
-
-
 }
