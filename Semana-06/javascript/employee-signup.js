@@ -1,20 +1,21 @@
 window.onload = function () {
         /* DOM elements */
-    var logInInputs = document.querySelectorAll("form input");
+    var signUpInputs = document.querySelectorAll("form input");
     var nameLabel = document.getElementById('name-label');
     var name = document.getElementById('name');
-    var nameMessage = document.getElementById('name-message');
+    var nameMesagge = document.getElementById('name-mesagge');
     var surnameLabel = document.getElementById('surname-label');
     var surname = document.getElementById('surname');
-    var surnameMessage = document.getElementById('surname-message')
+    var surnameMesagge = document.getElementById('surname-mesagge')
     var idLabel = document.getElementById('id-label');
     var idNumber = document.getElementById('id-number');
-    var idMessage = document.getElementById('id-message')
+    var idMesagge = document.getElementById('id-mesagge')
     var birthLabel = document.getElementById('birth-label');
     var birth = document.getElementById('birth-date');
+    var birthMesagge = document.getElementById('birth-mesagge')
     var phoneLabel = document.getElementById('phone-label');
     var phone = document.getElementById('phone-number');
-    var phoneMessage = document.getElementById('phone-message');
+    var phoneMesagge = document.getElementById('phone-mesagge');
     var adressLabel = document.getElementById('adress-label');
     var adress = document.getElementById('adress');
     var adressMesagge = document.getElementById('adress-mesagge');
@@ -33,6 +34,10 @@ window.onload = function () {
     var rePasswordLabel = document.getElementById('repeat-label');
     var rePassword = document.getElementById('re-password');
     var rePasswordMesagge = document.getElementById('repeat-mesagge');
+    var createButton = document.getElementById('btn');
+    var signUpTitle = document.querySelector('.sign-title');
+    var signUpDataBox = document.getElementById('sign-data');
+    var btnClose = document.getElementById('btn-close')
 
     /* validations */
 
@@ -75,6 +80,71 @@ window.onload = function () {
 
     }
 
+    
+    function inputNameData (input) {
+        var pName = document.createElement('p');
+        if(lettersNumbers(input) > 3) {
+            pName.innerText ='Name: ' + input;;
+            return pName;
+        }else {
+            pName.innerText = 'Enter a valid Name please';
+            return pName;
+        }
+    }
+
+
+    
+    function surnameInpurData (input) {
+        var pSurname = document.createElement('p');
+        if (lettersNumbers(input) > 3) {
+            pSurname.innerText ='Surname: ' + input;
+            return pSurname;
+        } else {
+            pSurname.innerText = 'Enter a valid surame please';
+            return pSurname;
+        }
+    }
+
+    function idInputData (input) {
+        var pIdNumber = document.createElement('p')
+        if(checkNumbers(input) > 7 ) {
+            pIdNumber.innerText = 'ID number ' + input;
+            return pIdNumber;
+        } else {
+            pIdNumber.innerText = 'Enter a valid ID number please';
+            return pIdNumber;
+        }
+    }
+    
+    function validateBirhtDate(input){
+        if(checkNumbers(input) !== 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function birthInputData (input) {
+        var pBirth = document.createElement('p');
+        if(checkNumbers(input) !== 0) {
+            pBirth.innerHTML = 'Birth date: ' + input;
+            return pBirth;
+        } else {
+            pBirth.innerHTML = 'Enter a birth date please';
+            return pBirth;
+        }
+    }
+    function phoneInputData (input) {
+        var pPhone = document.createElement('p');
+        if(checkNumbers(input) === 10 ) {
+            pPhone.innerHTML = 'Phone number: ' + input;
+            return pPhone;
+        } else {
+            pPhone.innerHTML = 'Enter a valid phone number please';
+            return pPhone;
+        }
+    }
+
     function spaceBeforeNumber (input) {
         for(var i= 0; i < input.length; i++) {
             if(checkNumbers(input[i])){
@@ -111,7 +181,17 @@ window.onload = function () {
                 return true;
             }
         }
-        return false
+    }
+
+    function adressInputData (input) {
+        var pAdress = document.createElement('p');
+        if(validateAdress(input) === true ) {
+            pAdress.innerHTML = 'Adress: ' + input;
+            return pAdress;
+        } else {
+            pAdress.innerHTML = 'Enter a valid adress please';
+            return pAdress;
+        }
     }
 
     function validateCity (input) {
@@ -130,12 +210,42 @@ window.onload = function () {
             }
         }
         
-        if(numberOfLetters >3 && numericChar > 3 && numberOfSymbols == 0) {
+        if(numberOfLetters > 3 && numericChar > 3 && numberOfSymbols == 0) {
             return true
         } else {
             return false
         }
         
+    }
+
+    function cityInputData (input) {
+        var pCity = document.createElement('p');
+        if(validateCity(input) === true ) {
+            pCity.innerHTML = 'City: ' + input;
+            return pCity;
+        } else {
+            pCity.innerHTML = 'Enter a valid city please';
+            return pCity;
+        }
+    }
+
+    function validateZip (input) {
+        if(checkNumbers(input) >= 4 && checkNumbers(input) <= 5) {
+            return true;
+        } else {
+            return false
+        }
+    }
+
+    function zipInputData (input) {
+        var pZip = document.createElement('p');
+        if(validateZip(input) === true ) {
+            pZip.innerHTML = 'Zip: ' + input;
+            return pZip;
+        } else {
+            pZip.innerHTML = 'Enter a valid Zip code please';
+            return pZip;
+        }
     }
 
     function validateEmail (input) {
@@ -147,11 +257,23 @@ window.onload = function () {
         }
     }
 
+    function emailInputData (input) {
+        var pEmail = document.createElement('p');
+        if(validateEmail(input) === true ) {
+            pEmail.innerHTML = 'Email: ' + input;
+            return pEmail;
+        } else {
+            pEmail.innerHTML = 'Enter a valid Email please';
+            return pEmail;
+        }
+    }
+
     function validatePassword (input) {
         var inputValue = input;
         var numberOfLetters = 0;
         var numericChar = 0;
         var numberOfSymbols = 0;
+        
         for(var i= 0; i < inputValue.length; i++) {
             var inputName = inputValue[i]
             if (letters.indexOf(inputName) != -1) {
@@ -171,98 +293,155 @@ window.onload = function () {
         
     }
     
+    function passwordInputData (input) {
+        var pPassword = document.createElement('p');
+        if(validatePassword(input) === true ) {
+            pPassword.innerHTML = 'Password: ' + input;
+            return pPassword;
+        } else {
+            pPassword.innerHTML = 'Enter a valid password please';
+            return pPassword;
+        }
+    }
+
+    function validateRePassword (input) {
+        var inputValue = input;
+        var numberOfLetters = 0;
+        var numericChar = 0;
+        var numberOfSymbols = 0;
+        
+        for(var i= 0; i < inputValue.length; i++) {
+            var inputName = inputValue[i]
+            if (letters.indexOf(inputName) != -1) {
+                numberOfLetters++;
+            }else if (numbers.indexOf(inputName) != -1){
+                numericChar++;
+            }else if (symbols.indexOf(inputName) != -1) {
+                numberOfSymbols++;
+            }
+        }
+        if(numberOfLetters > 4 && numericChar > 2 && numberOfSymbols === 0) {
+            if( inputValue === password.value && inputValue !== " " ){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function rePasswordInputData (input) {
+        var pRePassword = document.createElement('p');
+        if (validateRePassword(input) === true) {
+            pRePassword.innerHTML = 'Password: ' + input;
+            return pRePassword;
+        } else {
+            pRePassword.innerHTML = 'Repeat the password please';
+            return pRePassword;
+        }
+    }
+    
     function validateForm(e) {
         switch(e.target.name) {
             case 'name':
                 if(lettersNumbers(e.target.value) < 3) {
                     nameLabel.classList.add('label-error');
                     name.classList.add('input-error');
-                    nameMessage.classList.add('message-error');
+                    nameMesagge.classList.add('mesagge-error');
                 }else {
                     nameLabel.classList.remove('label-error');
                     name.classList.remove('input-error');
-                    nameMessage.classList.remove('message-error');
+                    nameMesagge.classList.remove('mesagge-error');
                 }
             break;
             case 'surname': 
                 if(lettersNumbers(e.target.value) < 3) {
                     surnameLabel.classList.add('label-error');
                     surname.classList.add('input-error');
-                    surnameMessage.classList.add('message-error');
+                    surnameMesagge.classList.add('mesagge-error');
                 }else {
                     surnameLabel.classList.remove('label-error');
                     surname.classList.remove('input-error');
-                    surnameMessage.classList.remove('message-error');
+                    surnameMesagge.classList.remove('mesagge-error');
                 }
             break;
             case 'id-number':
                 if(checkNumbers(e.target.value) < 7) {
                     idLabel.classList.add('label-error');
                     idNumber.classList.add('input-error');
-                    idMessage.classList.add('message-error');
+                    idMesagge.classList.add('mesagge-error');
                 } else {
                     idLabel.classList.remove('label-error');
                     idNumber.classList.remove('input-error');
-                    idMessage.classList.remove('message-error');
+                    idMesagge.classList.remove('mesagge-error');
+                }
+            break;
+            case 'birth-date':
+                if(!(validateBirhtDate(e.target.value))) {
+                    birthLabel.classList.add('label-error');
+                    birth.classList.add('input-error');
+                    birthMesagge.classList.add('mesagge-error');
+                } else {
+                    birthLabel.classList.remove('label-error');
+                    birth.classList.remove('input-error');
+                    birthMesagge.classList.remove('mesagge-error');
                 }
             break;
             case 'phone-number':
-                if(checkNumbers(e.target.value) < 10  ||checkNumbers(e.target.value) > 12 ) {
+                if(checkNumbers(e.target.value) !== 10 ) {
                     phoneLabel.classList.add('label-error');
                     phone.classList.add('input-error');
-                    phoneMessage.classList.add('message-error');
+                    phoneMesagge.classList.add('mesagge-error');
                 } else {
                     phoneLabel.classList.remove('label-error');
                     phone.classList.remove('input-error');
-                    phoneMessage.classList.remove('message-error');
+                    phoneMesagge.classList.remove('mesagge-error');
                 }
             break;
             case 'adress': 
                 if (!(validateAdress(e.target.value))) {
                     adressLabel.classList.add('label-error');
                     adress.classList.add('input-error');
-                    adressMesagge.classList.add('message-error');
+                    adressMesagge.classList.add('mesagge-error');
                 } else {
                     adressLabel.classList.remove('label-error');
                     adress.classList.remove('input-error');
-                    adressMesagge.classList.remove('message-error');
+                    adressMesagge.classList.remove('mesagge-error');
                 }
             break;
             case 'city':
                 if(!(validateCity(e.target.value))) {
                     cityLabel.classList.add('label-error');
                     city.classList.add('input-error');
-                    cityMesagge.classList.add('message-error');
+                    cityMesagge.classList.add('mesagge-error');
                 } else {
                     cityLabel.classList.remove('label-error');
                     city.classList.remove('input-error');
-                    cityMesagge.classList.remove('message-error');
+                    cityMesagge.classList.remove('mesagge-error');
                 }
             break;
             case'zip':
-                if(checkNumbers(e.target.value) < 4  || checkNumbers(e.target.value) > 5){
+                if(!(validateZip(e.target.value))) {
                     zipLabel.classList.add('label-error');
                     zip.classList.add('input-error');
-                    zipMesagge.classList.add('message-error');
+                    zipMesagge.classList.add('mesagge-error');
                 } else {
                     zipLabel.classList.remove('label-error');
                     zip.classList.remove('input-error');
-                    zipMesagge.classList.remove('message-error');
+                    zipMesagge.classList.remove('mesagge-error');
                 }
             break;
             case 'email':
                 if(!(validateEmail(e.target.value))){
                     emailLabel.classList.add('label-error');
                     email.classList.add('input-error');
-                    emailMesagge.classList.add('message-error');
+                    emailMesagge.classList.add('mesagge-error');
                 }else{
                     emailLabel.classList.remove('label-error');
                     email.classList.remove('input-error');
-                    emailMesagge.classList.remove('message-error');
+                    emailMesagge.classList.remove('mesagge-error');
                 }
             break;
             case 'password':
-                if(validatePassword(e.target.value) == false || e.target.value.length < 8 || e.target.value.length  > 10) {
+                if(!(validatePassword(e.target.value))) {
                     passwordLabel.classList.add('label-error');
                     password.classList.add('input-error');
                     passwordMesagge.classList.add('mesagge-error');
@@ -273,7 +452,7 @@ window.onload = function () {
                 }
             break;
             case 're-password':
-                if(rePassword.value !== password.value) {
+                if(!(validateRePassword(e.target.value))) {
                     rePasswordLabel.classList.add('label-error');
                     rePassword.classList.add('input-error');
                     rePasswordMesagge.classList.add('mesagge-error');
@@ -292,42 +471,47 @@ window.onload = function () {
             case 'name':
                 nameLabel.classList.remove('label-error');
                 name.classList.remove('input-error');
-                nameMessage.classList.remove('message-error');
+                nameMesagge.classList.remove('mesagge-error');
             break; 
             case 'surname':
                 surnameLabel.classList.remove('label-error');
                 surname.classList.remove('input-error');
-                surnameMessage.classList.remove('message-error');
+                surnameMesagge.classList.remove('mesagge-error');
             break;
             case 'id-number':
                 idLabel.classList.remove('label-error');
                 idNumber.classList.remove('input-error');
-                idMessage.classList.remove('message-error');
+                idMesagge.classList.remove('mesagge-error');
+            break;
+            case 'birth-date':
+                birthLabel.classList.remove('label-error');
+                birth.classList.remove('input-error');
+                birthMesagge.classList.remove('mesagge-error');
             break;
             case 'phone-number':
                 phoneLabel.classList.remove('label-error');
                 phone.classList.remove('input-error');
-                phoneMessage.classList.remove('message-error');
+                phoneMesagge.classList.remove('mesagge-error');
             break;
             case 'adress':
                 adressLabel.classList.remove('label-error');
                 adress.classList.remove('input-error');
-                adressMesagge.classList.remove('message-error');
+                adressMesagge.classList.remove('mesagge-error');
             break;
             case 'city':
                 cityLabel.classList.remove('label-error');
                 city.classList.remove('input-error');
-                cityMesagge.classList.remove('message-error');
+                cityMesagge.classList.remove('mesagge-error');
             break;
             case 'zip':
                 zipLabel.classList.remove('label-error');
                 zip.classList.remove('input-error');
-                zipMesagge.classList.remove('message-error');
+                zipMesagge.classList.remove('mesagge-error');
             break;
             case 'email':
                 emailLabel.classList.remove('label-error');
                 email.classList.remove('input-error');
-                emailMesagge.classList.remove('message-error');
+                emailMesagge.classList.remove('mesagge-error');
             break;
             case 'password':
                 passwordLabel.classList.remove('label-error');
@@ -342,10 +526,58 @@ window.onload = function () {
 
         }
     }
+    var nameData = inputNameData(name.value);
+    var surnameData = surnameInpurData(surname.value);
+    var idData = idInputData(idNumber.value);
+    var birthData = birthInputData(birth.value);
+    var phoneData = phoneInputData(phone.value);
+    var adressData = adressInputData(adress.value);
+    var cityData = cityInputData(city.value);
+    var zipData = zipInputData(zip.value);
+    var emailData = emailInputData(email.value);
+    var passwordData = passwordInputData(password.value);
+    var rePasswordData = rePasswordInputData(rePassword.value);
+    
+    function signUpnData () {
+        signUpDataBox.appendChild(nameData);
+        signUpDataBox.appendChild(surnameData);
+        signUpDataBox.appendChild(idData);
+        signUpDataBox.appendChild(birthData);
+        signUpDataBox.appendChild(phoneData);
+        signUpDataBox.appendChild(adressData);
+        signUpDataBox.appendChild(cityData);
+        signUpDataBox.appendChild(zipData);
+        signUpDataBox.appendChild(emailData);
+        signUpDataBox.appendChild(passwordData);
+        signUpDataBox.appendChild(rePasswordData);
+        signUpDataBox.classList.add('sign-push')
+        return false
+    }
 
 
-    logInInputs.forEach(function(input){
+    signUpInputs.forEach(function(input){
         input.addEventListener('blur', validateForm)
         input.addEventListener('focus', correctError)
     });
+
+    createButton.addEventListener('click', function(e){
+        e.preventDefault();
+        signUpnData(e);
+    })
+    
+    btnClose.addEventListener('click',function (e) {
+        signUpDataBox.classList.remove('sign-push');
+        signUpDataBox.removeChild(nameData);
+        signUpDataBox.removeChild(surnameData);
+        signUpDataBox.removeChild(idData);
+        signUpDataBox.removeChild(birthData);
+        signUpDataBox.removeChild(phoneData);
+        signUpDataBox.removeChild(adressData);
+        signUpDataBox.removeChild(cityData);
+        signUpDataBox.removeChild(zipData);
+        signUpDataBox.removeChild(emailData);
+        signUpDataBox.removeChild(passwordData);
+        signUpDataBox.removeChild(rePasswordData);
+    })
+    
 }

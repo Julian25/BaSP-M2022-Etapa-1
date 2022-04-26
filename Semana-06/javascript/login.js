@@ -125,7 +125,7 @@ window.onload = function () {
             logInResult.className = 'login-error';
             logInResult.innerHTML = 
             '<p>Please enter a valid Email adress and Password </p>';
-            logInTitle.parentNode.appendChild(logInResult)
+            logInTitle.parentNode.appendChild(logInResult);
         }
         
     }
@@ -134,7 +134,7 @@ window.onload = function () {
         e.preventDefault();
         logInData(e);
         
-    })
+    },)
 
 
 }

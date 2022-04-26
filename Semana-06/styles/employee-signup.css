@@ -74,6 +74,29 @@ form {
     margin-bottom: 50px;
     cursor: pointer;
 }
+.sign-hide {
+    display: none;
+    max-width: 260px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #AACE9B;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.sign-hide h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+.sign-hide p {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 400;
+}
 
 /* Validation styles */
 .input-error {
@@ -88,17 +111,13 @@ form {
     display: block;
 }
 
-.login-push {
+.sign-push {
     display: flex;
     flex-direction: column;
+    align-self: center;
     align-items: center;
-    max-width: 260px;
-    width: 100%;
-    padding: 20px;
-    background-color: #AACE9B;
-    border-radius: 5px;
-    margin-bottom: 20px;
 }
+
 .login-error {
     display: flex;
     flex-direction: column;
@@ -109,9 +128,4 @@ form {
     background-color: #F13312;
     border-radius: 5px;
     margin-bottom: 20px;
-}
-.login-push p, .login-error p {
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: 700;
 }
