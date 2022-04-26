@@ -24,6 +24,9 @@ Using Flexbox, a version was generated that is completely responsive and can be 
 ## Week 05
 During the fifth week, Javascript exercises with the purpose of acquiring basic concepts of this programming language were solved.
 
+## Week 06 
+During the sixth week, the login.html and employee-signup.html files were generated and styled with CSS. In addition, using javascript, the forms of each of the new screens were validated.
+
 # How to view this page online
 
 1- Clicking [this link](https://julian25.github.io/BaSP-M2022-Etapa-1) will lead you to the page of this project on github
@@ -35,6 +38,8 @@ During the fifth week, Javascript exercises with the purpose of acquiring basic 
 4- Click  [Week  04](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-04) to see to this project at the end of this week.
 
 5- Click  [Week  05](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-05) to see to this project at the end of this week.
+
+6- Click  [Week  06](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-06/views) to see to this project at the end of this week.
 
 # How to view the page offline:
 
