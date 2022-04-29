@@ -27,6 +27,9 @@ During the fifth week, Javascript exercises with the purpose of acquiring basic 
 ## Week 06 
 During the sixth week, the login.html and employee-signup.html files were generated and styled with CSS. In addition, using javascript, the forms of each of the new screens were validated.
 
+## Week 07
+During the seventh week, work continued with the forms developed during the previous week. For each form, an HTTP request was made using the Javascript Fetch method, sending all the data loaded in the form. In addition, in the case of the sign up form, the data obtained was stored in the browser's LocalStorage.
+
 # How to view this page online
 
 1- Clicking [this link](https://julian25.github.io/BaSP-M2022-Etapa-1) will lead you to the page of this project on github
@@ -40,6 +43,9 @@ During the sixth week, the login.html and employee-signup.html files were genera
 5- Click  [Week  05](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-05) to see to this project at the end of this week.
 
 6- Click  [Week  06](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-06/views) to see to this project at the end of this week.
+
+7- Click  [Week  07](https://julian25.github.io/BaSP-M2022-Etapa-1/Semana-07/views) to see to this project at the end of this week.
+
 
 # How to view the page offline:
 

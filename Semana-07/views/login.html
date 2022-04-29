@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Start of style sheets-->
+        <link rel="stylesheet" href="../styles/reset.css">
+        <link rel="stylesheet" href="../styles/general-styles.css">
+        <link rel="stylesheet" href="../styles/header-styles.css">
+        <link rel="stylesheet" href="../styles/login.css">
+        <link rel="stylesheet" href="../styles/sidebar-styles.css">
+        <link rel="stylesheet" href="../styles/footer-styles.css">
+        <!--End of style sheets-->
+        <title>Trackgenix</title>
+        <!--start of google typography-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;
+        0,600;1,400&family=Raleway:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+        <!--end of google typography-->
+        <!--JS code-->
+        <script src="../javascript/login.js"></script>
+        <!--En of JS code-->
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                <button class="btn"><img src="../assets/burguer-menu.png" alt=""></button>
+                <h1>Trackgenix S.A</h1>
+            </div>
+        </header>
+        <main>
+            <div class="container-form">
+                <h2>Log in</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email" class="form-label" id="email-label">
+                            Email
+                        </label>
+                        <input type="email" class="form-input" name="email" id="email" 
+                        placeholder="name@trackhenix.com">
+                        <p class="input-mesagge" id="email-mesagge">
+                            Provide a valid email address
+                        </p>
+                    </div>
+                    <div class="form-group" id="form-group">
+                        <label for="password" class="form-label" id="password-label">
+                            Password
+                        </label>
+                        <input type="password" class="form-input" name="password" id="password">
+                        <p class="input-mesagge" id="password-mesagge">
+                            The password must be made up of letters and numbers 
+                            and must be between 8 and 10 characters long.
+                        </p>
+                    </div>
+                    <div class="remember-container">
+                        <div class="remember-box">
+                            <input type="checkbox" name="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#">Forgopt password?</a>
+                    </div>
+                    <button class="btn" id="btn">Login</button>
+                </form>
+            </div>
+        </main>
+        <aside> <!--sidebar-->
+            <div class="container">
+                <form>
+                    <input type="search" class="search">
+                </form>
+                <p>Menu</p> 
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./employee-signup.html">Sign Up</a></li>
+                        <li><a href="#">Log In</a></li>
+                    </ul>
+                </nav>
+                <p>Get in touch</p> 
+                <p>
+                    Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus,
+                    ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante
+                    interdum. Sed nulla amet lorem feugiat tempus aliquam.
+                </p>
+                <ul>
+                    <li>
+                        <img src="../assets/mail.png" alt="mail icon">
+                        <a href="#">
+                            information@trackgenix.tld
+                        </a>
+                    </li>
+                    <li>
+                        <img src="../assets/adress.png" alt="adress icon">
+                        <a href="#">
+                            1234 Somewhere Road #8254 Nashville, TN 00000-0000    
+                        </a>
+                    </li>
+                    <li>
+                        <img src="../assets/phone.png" alt="phone icon">
+                        <a href="#">
+                            (000) 000-0000  
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <footer>
+            <div class="container">
+                <p>
+                    Rosario, Argentina
+                </p>
+                <div class="social-box">
+                    <a href="#"> <img src="../assets/linkedin.png" alt="Linkedin icon"></a>
+                    <a href="#"><img src="../assets/instagram.png" alt="Instagram icon"></a>
+                    <a href="#"> <img src="../assets/facebook.png" alt="Facebook icon"></a>
+                    <a href="#"><img src="../assets/twitter.png" alt="Twitter icon"></a>
+                </div>
+                <p>
+                    Copyright © 2022 Radium Rocket. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
