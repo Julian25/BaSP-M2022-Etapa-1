@@ -50,7 +50,7 @@ window.onload = function () {
             }
         }
         
-        if(numberOfLetters > 4 && numericChar > 2 && numberOfSymbols === 0) {
+        if(numberOfLetters >= 4 && numericChar > 2 && numberOfSymbols === 0) {
             return true
         } else {
             return false
@@ -116,6 +116,20 @@ window.onload = function () {
             '<p> Email entered: '+ email.value + '</p>' +
             '<p> Password entered: '+ password.value + '</p>';
             logInTitle.parentNode.appendChild(logInResult)
+            if(email.value === 'rose@radiumrocket.com' && password.value === 'BaSP2022'){
+                fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email="+email.value+"&password="+password.value)
+                    .then(function(data){
+                        console.log(data)
+                        return data.json();
+                    })
+                    .then(function(jsonData){
+                        console.log(jsonData)
+                        alert('The reques was succesfull '+ JSON.stringify(jsonData))
+                    })
+                    .catch(function(error){
+                        alert('The request was not successful' + error)
+                    })
+            }
         } else if(validateEmail(email.value) === false && validatePassword(password.value)) {
             logInResult.className = 'login-error';
             logInResult.innerHTML = 

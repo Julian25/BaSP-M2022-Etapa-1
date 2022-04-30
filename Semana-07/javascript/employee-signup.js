@@ -112,8 +112,7 @@ window.onload = function () {
             pIdNumber.innerText = 'Enter a valid ID number please';
             return pIdNumber;
         }
-    } 
-
+    }
     // Function to validate birth date
     function validateBirhtDate(input){
         var today = new Date();
@@ -128,6 +127,7 @@ window.onload = function () {
             return false
         }
     }
+
 
     // Function to obtain Birth date input value in a p tag
     function birthInputData (input) {
@@ -393,7 +393,6 @@ window.onload = function () {
                     birthLabel.classList.add('label-error');
                     birth.classList.add('input-error');
                     birthMesagge.classList.add('mesagge-error');
-                    console.log(e.target.value)
                 } else {
                     birthLabel.classList.remove('label-error');
                     birth.classList.remove('input-error');
@@ -541,30 +540,30 @@ window.onload = function () {
     }
         // Function to get data from inputs when click on create button
         function signUpnData () {
-        var nameData = inputNameData(name.value);
-        var surnameData = surnameInpurData(surname.value);
-        var idData = idInputData(idNumber.value);
-        var birthData = birthInputData(birth.value);
-        var phoneData = phoneInputData(phone.value);
-        var adressData = adressInputData(adress.value);
-        var cityData = cityInputData(city.value);
-        var zipData = zipInputData(zip.value);
-        var emailData = emailInputData(email.value);
-        var passwordData = passwordInputData(password.value);
-        var rePasswordData = rePasswordInputData(rePassword.value);
-        signUpDataBox.appendChild(nameData);
-        signUpDataBox.appendChild(surnameData);
-        signUpDataBox.appendChild(idData);
-        signUpDataBox.appendChild(birthData);
-        signUpDataBox.appendChild(phoneData);
-        signUpDataBox.appendChild(adressData);
-        signUpDataBox.appendChild(cityData);
-        signUpDataBox.appendChild(zipData);
-        signUpDataBox.appendChild(emailData);
-        signUpDataBox.appendChild(passwordData);
-        signUpDataBox.appendChild(rePasswordData);
-        signUpDataBox.classList.add('sign-push');
-        btnClose.addEventListener('click',function (e) {
+            var nameData = inputNameData(name.value);
+            var surnameData = surnameInpurData(surname.value);
+            var idData = idInputData(idNumber.value);
+            var birthData = birthInputData(birth.value);
+            var phoneData = phoneInputData(phone.value);
+            var adressData = adressInputData(adress.value);
+            var cityData = cityInputData(city.value);
+            var zipData = zipInputData(zip.value);
+            var emailData = emailInputData(email.value);
+            var passwordData = passwordInputData(password.value);
+            var rePasswordData = rePasswordInputData(rePassword.value);
+            signUpDataBox.appendChild(nameData);
+            signUpDataBox.appendChild(surnameData);
+            signUpDataBox.appendChild(idData);
+            signUpDataBox.appendChild(birthData);
+            signUpDataBox.appendChild(phoneData);
+            signUpDataBox.appendChild(adressData);
+            signUpDataBox.appendChild(cityData);
+            signUpDataBox.appendChild(zipData);
+            signUpDataBox.appendChild(emailData);
+            signUpDataBox.appendChild(passwordData);
+            signUpDataBox.appendChild(rePasswordData);
+            signUpDataBox.classList.add('sign-push');
+            btnClose.addEventListener('click',function (e) {
             signUpDataBox.classList.remove('sign-push');
             nameData.parentNode.removeChild(nameData);
             surnameData.parentNode.removeChild(surnameData);
@@ -577,8 +576,34 @@ window.onload = function () {
             emailData.parentNode.removeChild(emailData);
             passwordData.parentNode.removeChild(passwordData);
             rePasswordData.parentNode.removeChild(rePasswordData);
-        })
-    }
+
+            })
+            var date = birth.value
+            var year = date.substring (0,4);
+            var month = date.substring (5,7);
+            var day = date.substring(8,10);
+            var newDate = month +"/" + day + "/" + year;
+
+            var signUpUrl = "https://basp-m2022-api-rest-server.herokuapp.com/signup"
+            signUpUrl = signUpUrl + "?name=" + name.value + "&lastName=" + surname.value + "&dni=" + idNumber.value + "&dob=" + newDate + "&phone=" + phone.value + "&address=" + adress.value + "&city=" + city.value + "&zip=" + zip.value + "&email=" + email.value + "&password=" + password.value;        
+            if(lettersNumbers(name.value) > 3 && lettersNumbers(surname.value) > 3 && checkNumbers(idNumber.value) > 7 && validateBirhtDate(birth.value) && checkNumbers(phone.value) === 10 && validateAdress(adress.value) && validateCity(city.value) && validateZip(zip.value)  && validateEmail(email.value) && validatePassword(password.value) && validateRePassword(rePassword.value) ) {
+                    fetch(signUpUrl)
+                        .then(function(data){
+                            console.log(data)
+                            return data.json();
+                        })
+                        .then(function(jsonData){
+                            console.log(jsonData)
+                            alert('The request was succesfull '+ JSON.stringify(jsonData))
+                        })
+                        .catch(function(error){
+                            alert('The request was not successful' + error)
+                        })
+            }else {
+                console.log('sos un boludo')
+            }
+        }
+    
 
     //Adding events blur and focus to every input in the form
     signUpInputs.forEach(function(input){
@@ -591,4 +616,7 @@ window.onload = function () {
         e.preventDefault();
         signUpnData(e);
     })
+
+    
 }
+
