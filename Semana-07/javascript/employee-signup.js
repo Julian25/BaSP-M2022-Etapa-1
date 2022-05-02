@@ -585,16 +585,31 @@ window.onload = function () {
             var newDate = month +"/" + day + "/" + year;
 
             var signUpUrl = "https://basp-m2022-api-rest-server.herokuapp.com/signup"
-            signUpUrl = signUpUrl + "?name=" + name.value + "&lastName=" + surname.value + "&dni=" + idNumber.value + "&dob=" + newDate + "&phone=" + phone.value + "&address=" + adress.value + "&city=" + city.value + "&zip=" + zip.value + "&email=" + email.value + "&password=" + password.value;        
-            if(lettersNumbers(name.value) > 3 && lettersNumbers(surname.value) > 3 && checkNumbers(idNumber.value) > 7 && validateBirhtDate(birth.value) && checkNumbers(phone.value) === 10 && validateAdress(adress.value) && validateCity(city.value) && validateZip(zip.value)  && validateEmail(email.value) && validatePassword(password.value) && validateRePassword(rePassword.value) ) {
+            signUpUrl = signUpUrl + "?name=" + name.value + "&lastName=" + surname.value + "&dni=" + idNumber.value + 
+            "&dob=" + newDate + "&phone=" + phone.value + "&address=" + adress.value + "&city=" + city.value + 
+            "&zip=" + zip.value + "&email=" + email.value + "&password=" + password.value;        
+            if(lettersNumbers(name.value) > 3 && lettersNumbers(surname.value) > 3 && checkNumbers(idNumber.value) > 7 &&
+                validateBirhtDate(birth.value) && checkNumbers(phone.value) === 10 && validateAdress(adress.value) && 
+                validateCity(city.value) && validateZip(zip.value)  && validateEmail(email.value) && validatePassword(password.value) 
+                && validateRePassword(rePassword.value) ) {
                     fetch(signUpUrl)
                         .then(function(data){
-                            console.log(data)
-                            return data.json();
+                            var myJson = data.json();
+                            return myJson
                         })
                         .then(function(jsonData){
-                            console.log(jsonData)
-                            alert('The request was succesfull '+ JSON.stringify(jsonData))
+                            localStorage.setItem('Name',JSON.stringify(jsonData.data.name));
+                            localStorage.setItem('Surname',JSON.stringify(jsonData.data.lastName));
+                            localStorage.setItem('Employee',JSON.stringify(jsonData.data.name));
+                            localStorage.setItem('Id number',JSON.stringify(jsonData.data.dni));
+                            localStorage.setItem('Date of birth',JSON.stringify(jsonData.data.dob));
+                            localStorage.setItem('Phone',JSON.stringify(jsonData.data.phone));
+                            localStorage.setItem('Address',JSON.stringify(jsonData.data.address));
+                            localStorage.setItem('City',JSON.stringify(jsonData.data.city));
+                            localStorage.setItem('Zip number',JSON.stringify(jsonData.data.zip));
+                            localStorage.setItem('Email',JSON.stringify(jsonData.data.email));
+                            localStorage.setItem('Password',JSON.stringify(jsonData.data.password));
+                            alert(jsonData.msg +" " + JSON.stringify(jsonData));
                         })
                         .catch(function(error){
                             alert('The request was not successful' + error)
