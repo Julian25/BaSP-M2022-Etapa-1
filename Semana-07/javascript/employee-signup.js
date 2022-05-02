@@ -598,18 +598,19 @@ window.onload = function () {
                             return myJson
                         })
                         .then(function(jsonData){
-                            localStorage.setItem('Name',JSON.stringify(jsonData.data.name));
-                            localStorage.setItem('Surname',JSON.stringify(jsonData.data.lastName));
-                            localStorage.setItem('Employee',JSON.stringify(jsonData.data.name));
-                            localStorage.setItem('Id number',JSON.stringify(jsonData.data.dni));
-                            localStorage.setItem('Date of birth',JSON.stringify(jsonData.data.dob));
-                            localStorage.setItem('Phone',JSON.stringify(jsonData.data.phone));
-                            localStorage.setItem('Address',JSON.stringify(jsonData.data.address));
-                            localStorage.setItem('City',JSON.stringify(jsonData.data.city));
-                            localStorage.setItem('Zip number',JSON.stringify(jsonData.data.zip));
-                            localStorage.setItem('Email',JSON.stringify(jsonData.data.email));
-                            localStorage.setItem('Password',JSON.stringify(jsonData.data.password));
                             alert(jsonData.msg +" " + JSON.stringify(jsonData));
+                            jsonData.data.dob =  year + "-" + month  + "-" + day ;
+                            localStorage.setItem('Employee',JSON.stringify(jsonData));
+                            localStorage.setItem('Name',jsonData.data.name);
+                            localStorage.setItem('Surname',jsonData.data.lastName);
+                            localStorage.setItem('Id number',jsonData.data.dni);
+                            localStorage.setItem('Date of birth',jsonData.data.dob);
+                            localStorage.setItem('Phone',jsonData.data.phone);
+                            localStorage.setItem('Address',jsonData.data.address);
+                            localStorage.setItem('City',jsonData.data.city);
+                            localStorage.setItem('Zip number',jsonData.data.zip);
+                            localStorage.setItem('Email',jsonData.data.email);
+                            localStorage.setItem('Password',jsonData.data.password);
                         })
                         .catch(function(error){
                             alert('The request was not successful' + error)
@@ -619,7 +620,23 @@ window.onload = function () {
             }
         }
     
-
+    function obtainLocalStorage () {
+        if(localStorage.getItem('Employee')){
+            name.value = localStorage.getItem('Name');
+            surname.value = localStorage.getItem('Surname');
+            idNumber.value = localStorage.getItem('Id number');
+            birth.value = localStorage.getItem('Date of birth');
+            phone.value = localStorage.getItem('Phone');
+            adress.value = localStorage.getItem('Address');
+            city.value = localStorage.getItem('City');
+            zip.value = localStorage.getItem('Zip number');
+            email.value = localStorage.getItem('Email');
+            password.value = localStorage.getItem('Password');
+        } else {
+            console.log('There are no entries in local storage');
+        }
+    }
+    obtainLocalStorage();
     //Adding events blur and focus to every input in the form
     signUpInputs.forEach(function(input){
         input.addEventListener('blur', validateForm)
