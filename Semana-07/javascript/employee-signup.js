@@ -549,6 +549,16 @@ window.onload = function () {
             var emailData = emailInputData(email.value);
             var passwordData = passwordInputData(password.value);
             var rePasswordData = rePasswordInputData(rePassword.value);
+            var date = birth.value
+            var year = date.substring (0,4);
+            var month = date.substring (5,7);
+            var day = date.substring(8,10);
+            var newDate = month +"/" + day + "/" + year;
+            var signUpUrl = "https://basp-m2022-api-rest-server.herokuapp.com/signup"
+            signUpUrl = signUpUrl + "?name=" + name.value + "&lastName=" + surname.value + "&dni=" + idNumber.value + 
+            "&dob=" + newDate + "&phone=" + phone.value + "&address=" + adress.value + "&city=" + city.value + 
+            "&zip=" + zip.value + "&email=" + email.value + "&password=" + password.value;
+            
             signUpDataBox.appendChild(nameData);
             signUpDataBox.appendChild(surnameData);
             signUpDataBox.appendChild(idData);
@@ -561,37 +571,27 @@ window.onload = function () {
             signUpDataBox.appendChild(passwordData);
             signUpDataBox.appendChild(rePasswordData);
             signUpDataBox.classList.add('sign-push');
+            
             btnClose.addEventListener('click',function (e) {
-            signUpDataBox.classList.remove('sign-push');
-            nameData.parentNode.removeChild(nameData);
-            surnameData.parentNode.removeChild(surnameData);
-            idData.parentNode.removeChild(idData);
-            birthData.parentNode.removeChild(birthData);
-            phoneData.parentNode.removeChild(phoneData);
-            adressData.parentNode.removeChild(adressData);
-            cityData.parentNode.removeChild(cityData);
-            zipData.parentNode.removeChild(zipData);
-            emailData.parentNode.removeChild(emailData);
-            passwordData.parentNode.removeChild(passwordData);
-            rePasswordData.parentNode.removeChild(rePasswordData);
-
-            })
-            var date = birth.value
-            var year = date.substring (0,4);
-            var month = date.substring (5,7);
-            var day = date.substring(8,10);
-            var newDate = month +"/" + day + "/" + year;
-
-            var signUpUrl = "https://basp-m2022-api-rest-server.herokuapp.com/signup"
-            signUpUrl = signUpUrl + "?name=" + name.value + "&lastName=" + surname.value + "&dni=" + idNumber.value + 
-            "&dob=" + newDate + "&phone=" + phone.value + "&address=" + adress.value + "&city=" + city.value + 
-            "&zip=" + zip.value + "&email=" + email.value + "&password=" + password.value;
+                signUpDataBox.classList.remove('sign-push');
+                nameData.parentNode.removeChild(nameData);
+                surnameData.parentNode.removeChild(surnameData);
+                idData.parentNode.removeChild(idData);
+                birthData.parentNode.removeChild(birthData);
+                phoneData.parentNode.removeChild(phoneData);
+                adressData.parentNode.removeChild(adressData);
+                cityData.parentNode.removeChild(cityData);
+                zipData.parentNode.removeChild(zipData);
+                emailData.parentNode.removeChild(emailData);
+                passwordData.parentNode.removeChild(passwordData);
+                rePasswordData.parentNode.removeChild(rePasswordData);
+            })  
             if(lettersNumbers(name.value) < 3 && lettersNumbers(surname.value) < 3 && 
-                checkNumbers(idNumber.value) < 7 && validateBirhtDate(birth.value) === false && 
-                checkNumbers(phone.value) != 10 && validateAddress(adress.value) === false && 
-                validateCity(city.value) === false && validateZip(zip.value) === false  && 
-                validateEmail(email.value) === false && validatePassword(password.value) === false &&
-                validateRePassword(rePassword.value) === false ) {
+                checkNumbers(idNumber.value) < 7 && !(validateBirhtDate(birth.value)) && 
+                checkNumbers(phone.value) != 10 && !(validateAddress(adress.value)) && 
+                !(validateCity(city.value)) && !(validateZip(zip.value))  && 
+                !(validateEmail(email.value)) && !(validatePassword(password.value)) &&
+                !(validateRePassword(rePassword.value))) {
                 nameMesagge.classList.add('mesagge-error');
                 surnameMesagge.classList.add('mesagge-error');
                 idMesagge.classList.add('mesagge-error');

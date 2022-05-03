@@ -117,20 +117,17 @@ window.onload = function () {
             logInResult.appendChild(pMail);
             logInResult.appendChild(pPassword);
             logInResult.classList.add('sign-push')
-            if(email.value === 'rose@radiumrocket.com' && password.value === 'BaSP2022'){
-                fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email="+email.value+"&password="+password.value)
-                    .then(function(data){
-                        console.log(data)
-                        return data.json();
-                    })
-                    .then(function(jsonData){
-                        console.log(jsonData)
-                        alert('The request was succesfull '+ JSON.stringify(jsonData))
-                    })
-                    .catch(function(error){
-                        alert('The request was not successful' + error)
-                    })
-            }
+            fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email="+email.value+"&password="+password.value)
+                .then(function(data){
+                    return data.json();
+                })
+                .then(function(jsonData){
+                    alert(jsonData.msg + " " + JSON.stringify(jsonData))
+                })
+                .catch(function(error){
+                    alert('The request was not successful' + error)
+                })
+            
         } else if(validateEmail(email.value) === false && validatePassword(password.value)) {
             var pMail = document.createElement('p');
             pMail.innerText = 'Please enter a valid email adress';
