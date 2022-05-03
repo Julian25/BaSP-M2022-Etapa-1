@@ -69,18 +69,18 @@ form {
     height: 10px;
 
 }
-.remember-box label, .remember-container a {
+.remember-box label, .remember-container a, form a {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
     font-weight: 700;
     color: #373867;
 }
 
-.remember-container a {
+.remember-container a, form a {
     text-decoration: none;
 }
 
-.container-form button {
+.container-form button{
     align-self: center;
     width: 260px;
     margin-top: 30px;
@@ -88,6 +88,32 @@ form {
     cursor: pointer;
 }
 
+form a {
+    align-self: center;
+}
+
+.sign-hide {
+    display: none;
+    max-width: 260px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #AACE9B;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.sign-hide h3 {
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+.sign-hide p {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 400;
+}
 
 
 /* Validation styles */
@@ -103,30 +129,20 @@ form {
     display: block;
 }
 
-.login-push {
+
+
+.sign-push {
     display: flex;
     flex-direction: column;
+    align-self: center;
     align-items: center;
-    max-width: 260px;
-    width: 100%;
-    padding: 20px;
-    background-color: #AACE9B;
-    border-radius: 5px;
-    margin-bottom: 20px;
 }
-.login-error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 260px;
-    width: 100%;
-    padding: 20px;
-    background-color: #F13312;
+
+.sign-push button {
+    align-self: flex-end;
+    width: 100px;
+    margin: 0;
+    background-color: #00b300;
     border-radius: 5px;
-    margin-bottom: 20px;
-}
-.login-push p, .login-error p {
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: 700;
+    color: #FFFFFF;
 }

@@ -36,7 +36,7 @@ window.onload = function () {
     var rePasswordMesagge = document.getElementById('repeat-mesagge');
     var createButton = document.getElementById('btn');
     var signUpDataBox = document.getElementById('sign-data');
-    var btnClose = document.getElementById('btn-close')
+    var btnClose = document.getElementById('btn-close');
     
     /* validations */
     var letters = ["a","b","c","d","e","f","g","h","i","j","k",
@@ -46,9 +46,9 @@ window.onload = function () {
     
     var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
-    var symbols = ["!","#","$","%","&","/","(",")","=","?","¡","¿","+","*","[","]","{","}","-",".", "@"];
+    var symbols = ["!","#","$","%","&","/","(",")","=","?","¡","¿","+","*","[","]","{","}","-",".", "@",];
 
-    // Function to get only letters and their number
+    // Function to get only letters and  numbers
     function lettersNumbers (input) {
         var inputValue = input;
         var numberOfLetters = 0
@@ -115,13 +115,18 @@ window.onload = function () {
     }
     // Function to validate birth date
     function validateBirhtDate(input){
+        var date = birth.value
+        var year = date.substring (0,4);
+        var month = date.substring (5,7);
+        var day = date.substring(8,10);
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = today.getFullYear();
         today = yyyy  + '-' + mm + '-' + dd ;
         var dateValue = input;
-        if(checkNumbers(dateValue) !== 0 && dateValue < today){
+        var age = yyyy - year;
+        if(checkNumbers(dateValue) !== 0 && dateValue < today && age >= 18){
             return true
         } else {
             return false
@@ -152,46 +157,39 @@ window.onload = function () {
             return pPhone;
         }
     }
-    //Function to chek if there is a space beffore a string of numbers
-    function spaceBeforeNumber (input) {
-        for(var i= 0; i < input.length; i++) {
-            if(checkNumbers(input[i])){
-                if(input[i-1] == " " && checkNumbers(input.substring(i+1))){
-                    return true;
-                } 
-            }
-        }
-        return false;
-    }
+    
 
     //Function to validate adress field
-    function validateAdress (input) {
+    function validateAddress (input) {
+        var space = [' '];
+        var spaceNumber = 0;
         var inputValue = input;
         var numberOfLetters = 0;
         var numericChar = 0;
         var numberOfSymbols = 0;
         for(var i= 0; i < inputValue.length; i++) {
-            var inputName = inputValue[i]
-            if (letters.indexOf(inputName) != -1) {
+            if (letters.indexOf(inputValue[i]) != -1) {
                 numberOfLetters++;
-            }else if (numbers.indexOf(inputName) != -1){
+            }else if (numbers.indexOf(inputValue[i]) != -1){
                 numericChar++;
-            }else if (symbols.indexOf(inputName) != -1) {
+            }else if (symbols.indexOf(inputValue[i]) != -1) {
                 numberOfSymbols++;
+            }else if (space.includes(inputValue[i])) {
+                spaceNumber++;
             }
         }
-
-        if(numberOfLetters >= 5 && numericChar >= 5 && numberOfSymbols == 0) {
-            if(spaceBeforeNumber(input)) {
-                return true;
-            }
-        }
+        var total = spaceNumber + numberOfLetters + numericChar;
+        if(numberOfLetters > 0 && numericChar > 0 && numberOfSymbols === 0 && spaceNumber === 1 && total >= 5  ) {
+            return true;
+        } else {
+            return false
+        }    
     }
 
     // Function to obtain adress input value in a p tag
     function adressInputData (input) {
         var pAdress = document.createElement('p');
-        if(validateAdress(input) === true ) {
+        if(validateAddress(input) === true ) {
             pAdress.innerHTML = 'Adress: ' + input;
             return pAdress;
         } else {
@@ -216,8 +214,8 @@ window.onload = function () {
                 numberOfSymbols++;
             }
         }
-
-        if(numberOfLetters > 3 && numericChar > 2 && numberOfSymbols == 0) {
+        var total = numberOfLetters + numericChar;
+        if(numberOfLetters >= 0 && numericChar >= 0 && numberOfSymbols == 0 && total >= 3) {
             return true
         } else {
             return false
@@ -296,7 +294,7 @@ window.onload = function () {
             }
         }
 
-        if(numberOfLetters > 4 && numericChar > 2 && numberOfSymbols === 0) {
+        if(numberOfLetters > 0 && numericChar > 0 && numberOfSymbols === 0) {
             return true;
         } else {
             return false;
@@ -332,7 +330,7 @@ window.onload = function () {
                 numberOfSymbols++;
             }
         }
-        if(numberOfLetters > 4 && numericChar > 2 && numberOfSymbols === 0) {
+        if(numberOfLetters > 0 && numericChar > 0 && numberOfSymbols === 0) {
             if( inputValue === password.value && inputValue !== " " ){
                 return true;
             }
@@ -411,7 +409,7 @@ window.onload = function () {
                 }
             break;
             case 'adress': 
-                if (!(validateAdress(e.target.value))) {
+                if (!(validateAddress(e.target.value))) {
                     adressLabel.classList.add('label-error');
                     adress.classList.add('input-error');
                     adressMesagge.classList.add('mesagge-error');
@@ -587,11 +585,30 @@ window.onload = function () {
             var signUpUrl = "https://basp-m2022-api-rest-server.herokuapp.com/signup"
             signUpUrl = signUpUrl + "?name=" + name.value + "&lastName=" + surname.value + "&dni=" + idNumber.value + 
             "&dob=" + newDate + "&phone=" + phone.value + "&address=" + adress.value + "&city=" + city.value + 
-            "&zip=" + zip.value + "&email=" + email.value + "&password=" + password.value;        
-            if(lettersNumbers(name.value) > 3 && lettersNumbers(surname.value) > 3 && checkNumbers(idNumber.value) > 7 &&
-                validateBirhtDate(birth.value) && checkNumbers(phone.value) === 10 && validateAdress(adress.value) && 
-                validateCity(city.value) && validateZip(zip.value)  && validateEmail(email.value) && validatePassword(password.value) 
-                && validateRePassword(rePassword.value) ) {
+            "&zip=" + zip.value + "&email=" + email.value + "&password=" + password.value;
+            if(lettersNumbers(name.value) < 3 && lettersNumbers(surname.value) < 3 && 
+                checkNumbers(idNumber.value) < 7 && validateBirhtDate(birth.value) === false && 
+                checkNumbers(phone.value) != 10 && validateAddress(adress.value) === false && 
+                validateCity(city.value) === false && validateZip(zip.value) === false  && 
+                validateEmail(email.value) === false && validatePassword(password.value) === false &&
+                validateRePassword(rePassword.value) === false ) {
+                nameMesagge.classList.add('mesagge-error');
+                surnameMesagge.classList.add('mesagge-error');
+                idMesagge.classList.add('mesagge-error');
+                birthMesagge.classList.add('mesagge-error');
+                phoneMesagge.classList.add('mesagge-error');
+                adressMesagge.classList.add('mesagge-error');
+                cityMesagge.classList.add('mesagge-error');
+                zipMesagge.classList.add('mesagge-error');
+                emailMesagge.classList.add('mesagge-error');
+                passwordMesagge.classList.add('mesagge-error');
+                rePasswordMesagge.classList.add('mesagge-error');
+            } else if(lettersNumbers(name.value) > 3 && lettersNumbers(surname.value) > 3 && 
+                checkNumbers(idNumber.value) > 7 && validateBirhtDate(birth.value) && 
+                checkNumbers(phone.value) === 10 && validateAddress(adress.value) && 
+                validateCity(city.value) && validateZip(zip.value)  && 
+                validateEmail(email.value) && validatePassword(password.value)  && 
+                validateRePassword(rePassword.value) ) {
                     fetch(signUpUrl)
                         .then(function(data){
                             var myJson = data.json();
@@ -616,7 +633,7 @@ window.onload = function () {
                             alert('The request was not successful' + error)
                         })
             }else {
-                console.log('sos un boludo')
+                alert('Please fill in the form correctly');
             }
         }
     
@@ -632,6 +649,7 @@ window.onload = function () {
             zip.value = localStorage.getItem('Zip number');
             email.value = localStorage.getItem('Email');
             password.value = localStorage.getItem('Password');
+            rePassword.value =localStorage.getItem('Password')
         } else {
             console.log('There are no entries in local storage');
         }

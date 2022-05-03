@@ -9,9 +9,8 @@ window.onload = function () {
     var emailMesagge = document.getElementById('email-mesagge');
     var passwordMesagge = document.getElementById('password-mesagge');
     var logInButton = document.getElementById('btn');
-    var logInTitle = document.querySelector('.container-form h2');
-    var logInResult = document.createElement('div');
-    
+    var logInResult = document.getElementById('log-data');
+    var btnClose = document.getElementById('btn-close')
     /*Validations*/
 
     var letters = ["a","b","c","d","e","f","g","h","i","j","k",
@@ -50,7 +49,7 @@ window.onload = function () {
             }
         }
         
-        if(numberOfLetters >= 4 && numericChar > 2 && numberOfSymbols === 0) {
+        if(numberOfLetters != 0 && numericChar != 0 && numberOfSymbols === 0) {
             return true
         } else {
             return false
@@ -73,7 +72,7 @@ window.onload = function () {
                 }
             break;
             case 'password':
-                if(validatePassword(e.target.value) == false || e.target.value.length < 8 || e.target.value.length  > 10) {
+                if(validatePassword(e.target.value) == false || e.target.value.length < 8 ) {
                 passwordLabel.classList.add('label-error');
                 password.classList.add('input-error');
                 passwordMesagge.classList.add('mesagge-error');
@@ -111,11 +110,13 @@ window.onload = function () {
     //Function to get data from inputs when click on create button
     function logInData() {
         if(validateEmail(email.value) && validatePassword(password.value)) {
-            logInResult.className = 'login-push';
-            logInResult.innerHTML = 
-            '<p> Email entered: '+ email.value + '</p>' +
-            '<p> Password entered: '+ password.value + '</p>';
-            logInTitle.parentNode.appendChild(logInResult)
+            var pMail = document.createElement('p');
+            var pPassword = document.createElement('p');
+            pMail.innerText = 'Email entered: '+ email.value;
+            pPassword.innerText = 'Password entered: '+ password.value;
+            logInResult.appendChild(pMail);
+            logInResult.appendChild(pPassword);
+            logInResult.classList.add('sign-push')
             if(email.value === 'rose@radiumrocket.com' && password.value === 'BaSP2022'){
                 fetch("https://basp-m2022-api-rest-server.herokuapp.com/login?email="+email.value+"&password="+password.value)
                     .then(function(data){
@@ -124,29 +125,50 @@ window.onload = function () {
                     })
                     .then(function(jsonData){
                         console.log(jsonData)
-                        alert('The reques was succesfull '+ JSON.stringify(jsonData))
+                        alert('The request was succesfull '+ JSON.stringify(jsonData))
                     })
                     .catch(function(error){
                         alert('The request was not successful' + error)
                     })
             }
         } else if(validateEmail(email.value) === false && validatePassword(password.value)) {
-            logInResult.className = 'login-error';
-            logInResult.innerHTML = 
-            '<p> Please enter a valid Email adress</p>';
-            logInTitle.parentNode.appendChild(logInResult)
+            var pMail = document.createElement('p');
+            pMail.innerText = 'Please enter a valid email adress';
+            logInResult.appendChild(pMail);
+            logInResult.classList.add('sign-push');
+            emailLabel.classList.add('label-error');
+            email.classList.add('input-error');
+            emailMesagge.classList.add('mesagge-error');
         } else if (validateEmail(email.value) && validatePassword(password.value) == false) {
-            logInResult.className = 'login-error';
-            logInResult.innerHTML = 
-            '<p> Please enter a valid Password</p>';
-            logInTitle.parentNode.appendChild(logInResult)
+            var pPassword = document.createElement('p');
+            pPassword.innerText = 'Please enter a valid password';
+            logInResult.appendChild(pPassword);
+            logInResult.classList.add('sign-push');
+            passwordLabel.classList.add('label-error');
+            password.classList.add('input-error');
+            passwordMesagge.classList.add('mesagge-error');
         }else {
-            logInResult.className = 'login-error';
-            logInResult.innerHTML = 
-            '<p>Please enter a valid Email adress and Password </p>';
-            logInTitle.parentNode.appendChild(logInResult);
+            var pMail = document.createElement('p');
+            var pPassword = document.createElement('p');
+            pMail.innerText = 'Please enter a valid email adress';
+            pPassword.innerText = 'Please enter a valid password';
+            logInResult.appendChild(pMail);
+            logInResult.appendChild(pPassword);
+            logInResult.classList.add('sign-push');
+            emailLabel.classList.add('label-error');
+            email.classList.add('input-error');
+            emailMesagge.classList.add('mesagge-error');
+            passwordLabel.classList.add('label-error');
+            password.classList.add('input-error');
+            passwordMesagge.classList.add('mesagge-error');
         }
         
+        btnClose.addEventListener('click',function (e) {
+            logInResult.classList.remove('sign-push');
+            pMail.parentNode.removeChild(pMail);
+            pPassword.parentNode.removeChild(pPassword);
+
+        })
     }
     
     logInButton.addEventListener('click', function(e){

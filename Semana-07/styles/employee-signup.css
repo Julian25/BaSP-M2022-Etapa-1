@@ -124,17 +124,6 @@ form {
     color: #FFFFFF;
 }
 
-.login-error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 260px;
-    width: 100%;
-    padding: 20px;
-    background-color: #F13312;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
 
 @media screen and (min-width: 768px) {
     .sign-group {
