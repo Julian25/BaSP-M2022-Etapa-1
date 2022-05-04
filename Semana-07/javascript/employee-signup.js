@@ -37,6 +37,8 @@ window.onload = function () {
     var createButton = document.getElementById('btn');
     var signUpDataBox = document.getElementById('sign-data');
     var btnClose = document.getElementById('btn-close');
+    var modal = document.getElementById('modal');
+    var closeSpan = document.getElementById('close-span');
     
     /* validations */
     var letters = ["a","b","c","d","e","f","g","h","i","j","k",
@@ -239,7 +241,7 @@ window.onload = function () {
         if(checkNumbers(input) >= 4 && checkNumbers(input) <= 5) {
             return true;
         } else {
-            return false
+            return false;
         }
     }
 
@@ -615,7 +617,14 @@ window.onload = function () {
                             return myJson
                         })
                         .then(function(jsonData){
-                            alert(jsonData.msg +" " + JSON.stringify(jsonData));
+                            var msgData  = document.createElement('p');
+                            msgData.innerText = jsonData.msg;
+                            modal.appendChild(msgData);
+                            modal.classList.add('modal-show')
+                            closeSpan.addEventListener('click',function (e) {
+                                modal.classList.remove('modal-show');
+                                msgData.parentNode.removeChild(msgData);
+                            })
                             jsonData.data.dob =  year + "-" + month  + "-" + day ;
                             localStorage.setItem('Employee',JSON.stringify(jsonData));
                             localStorage.setItem('Name',jsonData.data.name);
@@ -630,7 +639,7 @@ window.onload = function () {
                             localStorage.setItem('Password',jsonData.data.password);
                         })
                         .catch(function(error){
-                            alert('The request was not successful' + error)
+                            alert('The request was not successful' + error);
                         })
             }else {
                 alert('Please fill in the form correctly');
@@ -650,11 +659,10 @@ window.onload = function () {
             email.value = localStorage.getItem('Email');
             password.value = localStorage.getItem('Password');
             rePassword.value =localStorage.getItem('Password')
-        } else {
-            console.log('There are no entries in local storage');
-        }
+        } 
     }
     obtainLocalStorage();
+    
     //Adding events blur and focus to every input in the form
     signUpInputs.forEach(function(input){
         input.addEventListener('blur', validateForm)

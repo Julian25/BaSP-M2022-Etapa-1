@@ -11,6 +11,9 @@ window.onload = function () {
     var logInButton = document.getElementById('btn');
     var logInResult = document.getElementById('log-data');
     var btnClose = document.getElementById('btn-close')
+    var modal = document.getElementById('modal');
+    var closeSpan = document.getElementById('close-span');
+    
     /*Validations*/
 
     var letters = ["a","b","c","d","e","f","g","h","i","j","k",
@@ -122,7 +125,14 @@ window.onload = function () {
                     return data.json();
                 })
                 .then(function(jsonData){
-                    alert(jsonData.msg + " " + JSON.stringify(jsonData))
+                    var msgData  = document.createElement('p');
+                    msgData.innerText = jsonData.msg;
+                    modal.appendChild(msgData);
+                    modal.classList.add('modal-show')
+                    closeSpan.addEventListener('click',function (e) {
+                        modal.classList.remove('modal-show');
+                        msgData.parentNode.removeChild(msgData);
+                    })
                 })
                 .catch(function(error){
                     alert('The request was not successful' + error)
@@ -171,6 +181,5 @@ window.onload = function () {
     logInButton.addEventListener('click', function(e){
         e.preventDefault();
         logInData(e);
-        
     },)
 }

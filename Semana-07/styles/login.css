@@ -13,6 +13,45 @@ h2 {
     font-weight: 400;
 }
 
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    max-width: 500px;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #373867; 
+    border-radius: 4px; 
+    background-color: #FFFFFF;
+    overflow: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #373867;
+}
+
+.close {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.modal-header h3 {
+    border: none;
+    font-size:  20px;
+    color: #FFFFFF;
+
+}
+
+.modal p {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+}
 
 form {
     display: flex;
@@ -129,8 +168,6 @@ form a {
     display: block;
 }
 
-
-
 .sign-push {
     display: flex;
     flex-direction: column;
@@ -145,4 +182,10 @@ form a {
     background-color: #00b300;
     border-radius: 5px;
     color: #FFFFFF;
+}
+
+.modal-show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
